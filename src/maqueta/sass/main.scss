@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Manrope:wght@200&display=swap");
+$color-yellow-one: #ffff58;
+$color-yellow-two: #ffff70;
+$color-yellow-three: #ffff88;
+$color-brown-one: #875a47;
+$color-brown-two: #987162;
+$color-brown-three: #a9897c;
+$color-brown-four: #bba196;
+
+@mixin iconsBig {
+  width: 3em;
+  height: 3em;
+}
+@mixin iconsMedium {
+  width: 2em;
+  height: 2em;
+}
+@mixin iconsSmall {
+  width: 1.5em;
+  height: 1.5em;
+}
+li {
+  list-style-type: none;
+}
+* {
+  margin: 0;
+  // box-sizing: border-box;
+}
+body {
+  background-color: $color-brown-three;
+  font-family: "Manrope", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Dancing Script", cursive;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+//////////////////////////////////////////
+.header {
+  background-color: $color-brown-one;
+  display: grid;
+  grid-template-columns: 2.5em 1fr 7em;
+  padding: 0.5em;
+  &-logo {
+    &-icon {
+      fill: $color-brown-three;
+      @include iconsMedium;
+    }
+  }
+  &-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      padding: 0.5em;
+      width: 40%;
+      border-radius: 1em;
+      border: 1px solid $color-brown-three;
+      background-color: transparent;
+      transition: all 0.5s;
+      padding-left: 2rem;
+
+      &:hover,
+      &:focus {
+        width: 70%;
+        background-color: $color-brown-three;
+      }
+    }
+  }
+  &-navegation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      margin-left: 5px;
+      @include iconsSmall;
+      fill: $color-brown-three;
+
+      &:hover {
+        width: 2em;
+        height: 2em;
+        animation: rotate 1s linear forwards infinite;
+      }
+    }
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.container {
+  height: 80vh;
+  margin: 0 3em;
+  background-color: $color-brown-four;
+  color: black;
+}
+.footer {
+  color: white;
+  // height: 20vh;
+  background-color: $color-brown-one;
+  &-description {
+    height: 70%;
+    &-title {
+      text-align: center;
+      font-size: 28px;
+    }
+    &-list {
+      padding-bottom: 1rem;
+      li {
+        padding-top: 3px;
+      }
+    }
+  }
+  &-redes {
+    height: 3rem;
+    background-color: #76422d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      @include iconsSmall;
+      &:hover {
+        animation: rotateme 1s linear forwards infinite;
+      }
+    }
+  }
+}
+@keyframes rotateme {
+  0% {
+    transform: rotate(0);
+    fill: $color-brown-two;
+  }
+  25% {
+    transform: rotate(-90deg);
+    fill: $color-brown-one;
+  }
+
+  50% {
+    transform: rotate(90deg);
+    fill: $color-brown-three;
+  }
+  100% {
+    transform: rotate(0);
+    fill: $color-brown-one;
+  }
+}
