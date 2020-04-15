@@ -66,10 +66,41 @@ a {
     transform: rotate(360deg); } }
 
 .container {
-  height: 80vh;
-  margin: 0 3em;
+  margin: 0 10em;
   background-color: #bba196;
   color: black; }
+  .container-slider img {
+    width: 100%; }
+  .container-title {
+    font-size: 24px;
+    color: black; }
+  .container-text {
+    font-size: 14px; }
+  .container-food {
+    display: grid; }
+  .container-types {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .container-types-icon {
+      width: 2em;
+      height: 2em; }
+    .container-types-main {
+      padding: 10px 0;
+      max-height: 400px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-auto-rows: 1fr;
+      overflow-x: hidden; }
+    .container-types-box {
+      background-color: rgba(0, 0, 0, 0.3);
+      height: 20rem;
+      border: 1px solid #875a47;
+      margin: 5px;
+      margin-top: 0;
+      width: 400px; }
 
 .footer {
   color: white;
@@ -93,7 +124,7 @@ a {
       width: 1.5em;
       height: 1.5em; }
       .footer-redes-icon:hover {
-        animation: rotateme 1s linear forwards infinite; }
+        animation: rotateme 2s linear forwards infinite; }
 
 @keyframes rotateme {
   0% {
