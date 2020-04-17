@@ -1,7 +1,8 @@
 import React from "react";
 import icons from "../styles/images/icons/sprite.svg";
-
-function header() {
+// import Search from "./Search";
+const header = (props) => {
+  const { clicked, value } = props;
   return (
     <header className="header">
       <div className="header-logo">
@@ -10,7 +11,13 @@ function header() {
         </svg>
       </div>
       <div className="header-search">
-        <input type="text" placeholder="Buscar..." id="search" />
+        <input
+          type="text"
+          placeholder="Buscar..."
+          id="search"
+          value={value}
+          onChange={clicked}
+        />
       </div>
       <div className="header-navegation">
         <svg className="header-navegation-icon">
@@ -25,5 +32,5 @@ function header() {
       </div>
     </header>
   );
-}
+};
 export default header;
