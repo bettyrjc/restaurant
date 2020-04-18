@@ -22,10 +22,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "node-sass src/components/styles/sass/main.scss src/components/styles/css/style.css -w",
+    "watchCss": "node-sass src/components/styles/sass/main.scss src/components/styles/css/style.css -w",
     "compileCss": "node-sass src/components/styles/sass/main.scss src/components/styles/css/style.comp.css",
     "compressCss": "node-sass src/components/styles/css/style.comp.css src/components/styles/css/style.css --output-style compressed",
-    "buildCss": "npm-run-all compile compress"
+    "buildCss": "npm-run-all compileCss compressCss"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -66,6 +66,8 @@ a {
     transform: rotate(360deg); } }
 
 .container {
+  display: grid;
+  grid-template-columns: 30rem 1fr;
   margin: 0 10em;
   background-color: #bba196;
   color: black; }

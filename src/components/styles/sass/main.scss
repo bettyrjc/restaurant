@@ -102,7 +102,9 @@ a {
   }
 }
 .container {
-  margin: 0 10em;
+  display: grid;
+  grid-template-columns: 15vw 80vw;
+  margin: 0;
   background-color: $color-brown-four;
   color: black;
   &-slider {
@@ -146,6 +148,27 @@ a {
       margin: 5px;
       margin-top: 0;
       width: 400px;
+    }
+  }
+}
+.navbar {
+  background-color: $color-brown-one;
+  border: 1px solid $color-brown-one;
+  color: white;
+  margin-right: 5px;
+  &-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-list {
+    margin-top: 1rem;
+    li {
+      padding: 10px;
+
+      &:hover {
+        background-color: $color-brown-three;
+      }
     }
   }
 }

@@ -20,13 +20,13 @@ export const getFoods = () => async (dispatch) => {
 export const getFood = (query) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `https://www.themealdb.com/api/json/v1/1/search.php?f=${query}`
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
     );
     dispatch({
       type: GET_SEARCH_FOOD,
       payload: res.data.meals,
     });
-    console.log(res.data);
+    console.log(res.data.meals);
   } catch {
     console.log("error en busqueda");
   }
