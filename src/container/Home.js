@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Sidenav from "../components/layout/nav";
-import icons from "../components/styles/images/icons/sprite.svg";
 import slider from "../components/styles/images/img/slider.png";
 
 import { getFoods, getFood } from "../actions/foodActions";
@@ -33,9 +32,6 @@ class Home extends Component {
         <div className="container">
           <Sidenav />
           <div>
-            <div className="container-slider">
-              <img src={slider} alt="slider" />
-            </div>
             <div className="container-food">
               {search === null || search === undefined ? (
                 <div>Busca algo</div>
@@ -43,13 +39,12 @@ class Home extends Component {
                 search.map((fod) => <div key={fod.idMeal}>{fod.strMeal}</div>)
               )}
             </div>
+            <div className="container-slider">
+              <img src={slider} alt="slider" />
+            </div>
 
             <div className="container-types">
-              <div id="products_slider_left">
-                <svg className="container-types-icon">
-                  <use href={`${icons}#icon-chevron-left`} />
-                </svg>
-              </div>
+              <h1 className="container-types-title"> Categorias</h1>
               <div className="container-types-main">
                 {foods.map((food) => (
                   <div className="container-types-box" key={food.idCategory}>
@@ -58,13 +53,59 @@ class Home extends Component {
                   </div>
                 ))}
               </div>
-              <div>
-                <svg
-                  className="container-types-icon"
-                  id="products_slider_right"
-                >
-                  <use href={`${icons}#icon-chevron-right`} />
-                </svg>
+            </div>
+            {/* trabajadores del mes */}
+            <div className="workers">
+              <h1>Trabajadores del mes</h1>
+              <p>
+                Restauranta, tiene mas de 100 empleados y en el mes de Abril
+                estos son los 10 destacados
+              </p>
+              <div className="workers-container">
+                <div className="workers-box">
+                  <h1 className="workers-box-name">Diana Venezuela</h1>
+                  <p className="workers-box-puesto">Lavaplatos</p>
+                  <p className="workers-box-puesto">
+                    Diana, ha sido nuestra trabajadora del mes por su dedicacion
+                    y amor al trabajo
+                  </p>
+                </div>
+                {/*  */}
+                <div className="workers-box">
+                  <h1 className="workers-box-name">Diana Venezuela</h1>
+                  <p className="workers-box-puesto">Lavaplatos</p>
+                  <p className="workers-box-puesto">
+                    Diana, ha sido nuestra trabajadora del mes por su dedicacion
+                    y amor al trabajo
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="favFood">
+              <h1 className="favFood-title">Comida destacada de este mes</h1>
+              <p>
+                Restauranta, hace una encuensta a sus clientes de cual ha sido
+                su comida favorita del mes
+              </p>
+              <p>
+                Este mes ha ganado el <strong>Pollo Salsa negra</strong>
+              </p>
+              <div className="favFood-container">
+                <img
+                  className="favFood-img"
+                  src="https://3.bp.blogspot.com/-3SrZPvObwkg/T81hy236_MI/AAAAAAAAAyo/lKxAQtadUvs/s1600/2012-06-04+16.09.18.jpg"
+                  alt="pollo"
+                />
+                <div className="favFood-box">
+                  <p className="favFood-box-name">Frijoles</p>
+                  <p className="favFood-box-category">
+                    <strong>Categoria:</strong>
+                    Vegana
+                  </p>
+                  <p className="workers-box-puesto">
+                    Nuestros frijoles son los mejores
+                  </p>
+                </div>
               </div>
             </div>
           </div>

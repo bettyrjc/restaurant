@@ -1,0 +1,55 @@
+.header {
+  background: $color-brown-one;
+  background: linear-gradient(
+    top,
+    $color-brown-one 0%,
+    $color-brown-two 24%,
+    $color-brown-four 100%
+  );
+  display: grid;
+  grid-template-columns: 2.5em 1fr 7em;
+  padding: 0.5em;
+  &-logo {
+    &-icon {
+      fill: white;
+      @include iconsMedium;
+    }
+  }
+  &-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      padding: 0.3rem;
+      width: 40%;
+      border-radius: 1rem;
+      border: 1px solid white;
+      background-color: transparent;
+      transition: all 0.5s;
+      padding-left: 2rem;
+
+      &:hover,
+      &:focus {
+        width: 70%;
+        background-color: $color-brown-three;
+      }
+    }
+  }
+  &-navegation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      margin-left: 5px;
+      @include iconsSmall;
+      fill: white;
+
+      &:hover {
+        width: 2em;
+        height: 2em;
+        animation: rotate 1s linear forwards infinite;
+      }
+    }
+  }
+}
