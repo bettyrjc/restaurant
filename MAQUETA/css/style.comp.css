@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100&display=swap");
+li {
+  list-style-type: none; }
+
+.pad-left-10 {
+  padding-left: 10px; }
+
+.pad-right-10 {
+  padding-right: 10px; }
+
+.traprecio {
+  transform: skew(20deg);
+  background-color: #003cff;
+  height: 40rem;
+  width: 100%; }
+
+body {
+  background-color: red;
+  margin: 0; }
+
+.header {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #bebebe;
+  padding: 0 0px 0 10px; }
+  .header-logo {
+    font-family: "Handlee", cursive;
+    font-size: 32px; }
+  .header-search-input {
+    height: 2rem;
+    width: 30rem;
+    border-radius: 100px;
+    border: 1px solid #bebebe;
+    padding-left: 2rem;
+    position: relative; }
+  .header-search-icon {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    fill: #707070;
+    position: absolute;
+    margin-left: -2.5rem;
+    margin-top: 10px; }
+    .header-search-icon:hover {
+      margin-top: 5px;
+      width: 1.5rem;
+      height: 1.5rem; }
+  .header-navegation {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header-navegation li {
+      padding-left: 10px;
+      font-size: 16px;
+      font-family: "Roboto", sans-serif; }
+      .header-navegation li:hover {
+        text-decoration: underline; }
+
+.container {
+  background-color: white;
+  margin: 0 5% 0 5%; }
+
+.slider {
+  height: 30rem;
+  width: 100%; }
+  .slider-img {
+    height: 100%;
+    width: 100%; }
+
+.favorites-title {
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #707070;
+  text-transform: uppercase;
+  text-align: center; }
+
+.favorites-container {
+  position: absolute;
+  height: 40rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
+  padding: 1rem; }
+
+.favorites-box {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30rem;
+  margin-top: 4.5rem; }
+  .favorites-box-img img {
+    width: 100%;
+    height: 20rem; }
+  .favorites-box-title {
+    font-size: 28px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    margin: 0; }
+  .favorites-box-text {
+    padding: 5px;
+    margin: 0;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif; }

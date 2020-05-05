@@ -1,0 +1,278 @@
+@import "./all/all.scss"; //
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid $color-gray-2;
+  padding: 0 0px 0 10px;
+  &-logo {
+    font-family: "Handlee", cursive;
+    font-size: 32px;
+  }
+  &-search {
+    &-input {
+      height: 2rem;
+      width: 30rem;
+      border-radius: 100px;
+      border: 1px solid $color-gray-2;
+      padding-left: 2rem;
+      position: relative;
+    }
+    &-icon {
+      cursor: pointer;
+      width: 1rem;
+      height: 1rem;
+      fill: $color-gray-1;
+      position: absolute;
+      margin-left: -2.5rem;
+      margin-top: 10px;
+
+      &:hover {
+        margin-top: 5px;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+  &-navegation {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      padding-left: 10px;
+      @include font-text-2;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.container {
+  background-color: white;
+  margin: 0 10%;
+}
+// slider
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30rem;
+  width: 99%;
+
+  &-img {
+    height: 100%;
+    width: 100%;
+  }
+}
+// favoritos
+.favorites {
+  &-title {
+    @include font-title-1;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  &-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30rem;
+    margin-top: 0.5rem;
+
+    &-img {
+      img {
+        width: 100%;
+        height: 20rem;
+      }
+    }
+    &-title {
+      @include font-title-2;
+      color: $color-gray-1;
+
+      margin: 0;
+    }
+    &-text {
+      padding: 5px;
+      margin: 0;
+      @include font-text-4;
+      color: $color-gray-1;
+    }
+  }
+}
+.workers {
+  &-title {
+    @include font-title-1;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  &-boxMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $color-gray-2;
+      transition: all 0.2s linear;
+
+      &:hover {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  &-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    &-img {
+      img {
+        width: 98%;
+        height: 20rem;
+      }
+    }
+    &-title {
+      color: $color-blue-1;
+      @include font-title-3;
+      margin: 0;
+    }
+    &-text {
+      padding: 5px;
+      margin: 0;
+      @include font-text-4;
+    }
+  }
+}
+.categories {
+  border: 1px solid $color-gray-2;
+  border-top: none;
+  padding-bottom: 1rem;
+
+  &-title {
+    @include font-title-1;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  &-grilla {
+    margin: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  &-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &-img {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-text {
+      opacity: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      transition: all 0.5s linear;
+      h2 {
+        opacity: 1;
+        @include font-title-3;
+        color: white;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.delivery {
+  background-image: url("../img/delivery.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &-btn {
+    cursor: pointer;
+    padding: 1%;
+    border: 2px solid $color-blue-1;
+    color: $color-blue-1;
+    @include font-text-2;
+    border-radius: 100px;
+    width: 50%;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    transform: scaleX(1);
+
+    &:hover {
+      transform: scaleY(1.1);
+    }
+  }
+  &-text {
+    font-weight: 900;
+    color: red;
+    font-family: "Handlee", cursive;
+    font-size: 20px;
+  }
+}
+.footer {
+  height: 3.5rem;
+  background-color: $color-gray-2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &-icon {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: black;
+  }
+}
