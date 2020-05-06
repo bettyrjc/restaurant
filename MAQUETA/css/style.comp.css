@@ -1,3 +1,18 @@
+/*
+Media Query
+0 - 600px       Phone
+600 - 900px     Tablet Portrait
+900 - 1200px    Tablet Landscape
+1200 - 1800px   Desktop
+1800px ->       Big Desktop
+$breakpoint argument shortcude
+- phone
+- phone-land
+- tab
+- tab-land
+- big-desktop
+1em = 16px
+*/
 @import url("https://fonts.googleapis.com/css2?family=Handlee&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100&display=swap");
 li {
   list-style-type: none; }
@@ -35,21 +50,22 @@ li {
   border-radius: 100px;
   margin-right: 10px; }
 
-/*
-Media Query
-0 - 600px       Phone
-600 - 900px     Tablet Portrait
-900 - 1200px    Tablet Landscape
-1200 - 1800px   Desktop
-1800px ->       Big Desktop
-$breakpoint argument shortcude
-- phone
-- phone-land
-- tab
-- tab-land
-- big-desktop
-1em = 16px
-*/
+.white {
+  color: white; }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  margin-top: 2rem !important; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .grilla {
+      display: block; } }
+
 * {
   margin: 0; }
 
@@ -60,7 +76,7 @@ $breakpoint argument shortcude
   box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
   height: 340px;
   margin-bottom: 3rem; }
-  @media (max-width: 64em) {
+  @media (min-width: 6.25em) and (max-width: 64em) {
     .card {
       display: block;
       height: 30%; } }
@@ -69,7 +85,7 @@ $breakpoint argument shortcude
     .card-image img {
       width: 300px;
       height: 100%; }
-      @media (max-width: 64em) {
+      @media (min-width: 6.25em) and (max-width: 64em) {
         .card-image img {
           display: block;
           width: 100%; } }
@@ -135,7 +151,7 @@ $breakpoint argument shortcude
           display: flex;
           justify-content: space-between;
           padding-right: 15px; } }
-    @media (max-width: 64em) {
+    @media (min-width: 6.25em) and (max-width: 64em) {
       .card-box-btns {
         display: flex;
         justify-content: center;
@@ -154,13 +170,229 @@ $breakpoint argument shortcude
       .card-box-btns-btn:hover {
         box-shadow: 6px 6px 10px 5px rgba(112, 112, 112, 0.2); }
 
+.comments {
+  background-color: white;
+  margin: 30px 0;
+  padding: 0 20px; }
+  .comments-title {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #707070;
+    margin-bottom: 15px; }
+
 .comment {
+  background-color: #f4f4f4;
+  padding: 0 20px;
+  margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 15rem 1fr; }
-  .comment-description-name {
+  grid-template-columns: 9rem 1fr; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .comment {
+      grid-template-columns: 7rem 1fr; } }
+  .comment-imgs {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    .comment-imgs img {
+      border-radius: 100%;
+      width: 120px;
+      height: 120px;
+      margin-left: 10px; }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .comment-imgs img {
+          width: 90px;
+          height: 90px; } }
+  .comment-description-box {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .comment-description-box {
+        display: block; } }
+    .comment-description-box h3 {
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 20px; }
+      @media (min-width: 37.5625em) and (max-width: 64em) {
+        .comment-description-box h3 {
+          font-size: 14px; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .comment-description-box h3 {
+          font-size: 14px; } }
+    .comment-description-box p {
+      font-size: 12px;
+      font-family: "Roboto", sans-serif; }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .comment-description-box p {
+          font-size: 10px; } }
+  .comment-description-text {
+    padding: 10px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif; }
+
+.cards-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+  height: 220px;
+  margin-bottom: 3rem; }
+  @media (min-width: 6.25em) and (max-width: 64em) {
+    .cards-card {
+      display: block;
+      height: 30%; } }
+  .cards-card-image {
+    height: 100%; }
+    .cards-card-image img {
+      width: 220px;
+      height: 100%; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-image img {
+          display: block;
+          width: 100%; } }
+  .cards-card-box {
+    padding: 10px 0;
+    margin-left: 2%; }
+    .cards-card-box-title {
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      color: #707070;
+      font-size: 22px; }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-title {
+          font-size: 28px; } }
+    .cards-card-box-text {
+      font-size: 12px;
+      font-family: "Roboto", sans-serif;
+      color: #707070;
+      padding-right: 15%;
+      margin: 5px 0; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-text {
+          padding-right: 2%; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-text {
+          font-size: 16px;
+          padding-right: 5%; } }
+    .cards-card-box-secondary {
+      margin-right: 3%;
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #707070; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-secondary {
+          margin-right: 12px; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-secondary {
+          font-size: 16px; } }
+    .cards-card-box-calification {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-calification-stars-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #ffc300; }
+    .cards-card-box-ingredients {
+      margin: 5px 0 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-ingredients-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        padding: 5px;
+        margin-bottom: 5px; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-ingredients {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%; } }
+    .cards-card-box-price {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-price-number {
+        font-size: 28px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        color: #2256ff;
+        font-size: 18px; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .cards-card-box-price-number {
+            font-size: 28px; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-price {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          font-size: 20px; } }
+
+.process {
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-top: 5%; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .process {
+      margin-left: 5%; } }
+  .process-box-name {
+    height: 40px;
+    background-color: #2256ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .process-box-name h3 {
+      color: white;
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 22px; }
+  .process-box-description {
+    border: 1px solid #2256ff;
+    margin: 10px;
+    margin-top: 0;
+    padding: 5%; }
+    .process-box-description-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .process-box-description-name p {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        color: #707070; }
+    .process-box-description-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .process-box-description-text p {
+        font-size: 18px;
+        font-family: "Roboto", sans-serif; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .process-box-description-text p {
+            font-size: 20px; } }
+  .process-btn {
+    margin-top: 5%;
+    padding: 10px;
+    width: 100%;
+    color: #707070;
+    transition: all 0.4s;
+    box-shadow: 3px 3px 5px 2px rgba(112, 112, 112, 0.2);
+    margin-bottom: 15px; }
+    .process-btn:hover {
+      background-color: #707070;
+      color: white; }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .process-btn {
+        font-size: 18px; } }
 
 body {
   background-color: #f4f4f4;
@@ -295,7 +527,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 330px);
     margin-left: 7%; }
-    @media (max-width: 64em) {
+    @media (min-width: 6.25em) and (max-width: 64em) {
       .favorites-container {
         grid-template-columns: repeat(3, 230px); } }
     @media (max-width: 50em) {
@@ -311,7 +543,7 @@ body {
     margin-top: 0.5rem;
     margin-right: 5px;
     height: 350px; }
-    @media (max-width: 64em) {
+    @media (min-width: 6.25em) and (max-width: 64em) {
       .favorites-box {
         height: 380px; } }
     @media (max-width: 50em) {
@@ -346,6 +578,9 @@ body {
           font-size: 14px;
           font-family: "Roboto", sans-serif;
           color: black; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .favorites-box-text {
+          padding: 0 10px; } }
 
 .workers-title {
   font-size: 32px;
@@ -406,6 +641,8 @@ body {
     margin: 0;
     font-size: 12px;
     font-family: "Roboto", sans-serif; }
+  .workers-box-content {
+    padding-right: 4%; }
 
 .categories {
   border: 1px solid #bebebe;
@@ -481,6 +718,17 @@ body {
     color: red;
     font-family: "Handlee", cursive;
     font-size: 20px; }
+  .delivery-h3 {
+    font-size: 32px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 26px; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .delivery-h3 {
+        text-align: center; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .delivery-h3 {
+        font-size: 20px; } }
 
 .footer {
   height: 3.5rem;

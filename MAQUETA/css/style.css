@@ -49,9 +49,25 @@ li {
   border: none;
   border-radius: 100px;
   margin-right: 10px; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .fill {
+      margin-right: 0; } }
 
 .white {
   color: white; }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  margin-top: 2rem !important; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .grilla {
+      display: block; } }
 
 * {
   margin: 0; }
@@ -220,6 +236,212 @@ li {
     font-size: 12px;
     font-family: "Roboto", sans-serif; }
 
+.cards-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+  height: 258px;
+  margin-bottom: 3rem; }
+  @media (min-width: 6.25em) and (max-width: 64em) {
+    .cards-card {
+      display: block;
+      height: 30%; } }
+  .cards-card-image {
+    height: 100%; }
+    .cards-card-image img {
+      width: 220px;
+      height: 100%; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-image img {
+          display: block;
+          width: 100%; } }
+  .cards-card-box {
+    padding: 10px 0;
+    margin-left: 2%; }
+    .cards-card-box-title {
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      color: #707070;
+      font-size: 22px; }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-title {
+          font-size: 28px; } }
+    .cards-card-box-text {
+      font-size: 12px;
+      font-family: "Roboto", sans-serif;
+      color: #707070;
+      padding-right: 15%;
+      margin: 5px 0; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-text {
+          padding-right: 2%; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-text {
+          font-size: 16px;
+          padding-right: 5%; } }
+    .cards-card-box-secondary {
+      margin-right: 3%;
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #707070; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-secondary {
+          margin-right: 12px; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-secondary {
+          font-size: 16px; } }
+    .cards-card-box-calification {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-calification-stars-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #ffc300; }
+    .cards-card-box-ingredients {
+      margin: 5px 0 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-ingredients-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        padding: 5px;
+        margin-bottom: 5px; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-ingredients {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%; } }
+    .cards-card-box-price {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-card-box-price-number {
+        font-size: 28px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        color: #2256ff;
+        font-size: 18px; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .cards-card-box-price-number {
+            font-size: 28px; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-price {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          font-size: 20px; } }
+    .cards-card-box-btns {
+      margin-top: 2%; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-btns {
+          display: flex;
+          justify-content: center;
+          align-items: center; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-btns {
+          flex-direction: column; } }
+      .cards-card-box-btns-btn {
+        border-radius: 100px !important;
+        border-color: #ffc300;
+        width: 8rem;
+        padding: 5px;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        color: #707070;
+        transition: all 0.4s;
+        outline: none;
+        box-shadow: 3px 3px 5px 2px rgba(112, 112, 112, 0.2); }
+        .cards-card-box-btns-btn:hover:hover {
+          background-color: #707070;
+          color: white;
+          border-color: #707070; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .cards-card-box-btns-btn {
+            width: 98%;
+            padding: 8px;
+            font-size: 16px;
+            color: black;
+            letter-spacing: 1px;
+            margin: 4% 1% 0; } }
+
+.process {
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-top: 5%; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .process {
+      margin-left: 5%; } }
+  .process-box-name {
+    height: 40px;
+    background-color: #2256ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .process-box-name h3 {
+      color: white;
+      font-size: 28px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 22px; }
+  .process-box-description {
+    border: 1px solid #2256ff;
+    margin: 10px;
+    margin-top: 0;
+    padding: 5%; }
+    .process-box-description-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .process-box-description-name p {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        color: #707070; }
+    .process-box-description-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .process-box-description-text p {
+        font-size: 18px;
+        font-family: "Roboto", sans-serif; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .process-box-description-text p {
+            font-size: 20px; } }
+  .process-btn {
+    margin-top: 5%;
+    padding: 10px;
+    width: 100%;
+    color: #707070;
+    transition: all 0.4s;
+    box-shadow: 3px 3px 5px 2px rgba(112, 112, 112, 0.2);
+    margin-bottom: 15px; }
+    .process-btn:hover {
+      background-color: #707070;
+      color: white; }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .process-btn {
+        font-size: 18px; } }
+
+.blog {
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("https://3.bp.blogspot.com/-otJEC5GINdw/Vvos12wGUpI/AAAAAAAAKzs/4UdFNgC7278MQ_ypmvn7Kowzitc8klUvQ/s1600/Foto1.JPG"); }
+
 body {
   background-color: #f4f4f4;
   margin: 0; }
@@ -353,6 +575,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 330px);
     margin-left: 7%; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .favorites-container {
+        grid-template-columns: repeat(3, 230px); } }
     @media (max-width: 50em) {
       .favorites-container {
         display: block;
@@ -366,6 +591,9 @@ body {
     margin-top: 0.5rem;
     margin-right: 5px;
     height: 350px; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .favorites-box {
+        height: 380px; } }
     @media (max-width: 50em) {
       .favorites-box {
         margin-right: 0px;
@@ -531,11 +759,27 @@ body {
     transform: scaleX(1); }
     .delivery-btn:hover {
       transform: scaleY(1.1); }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .delivery-btn {
+        width: 98%;
+        margin: 0 1%;
+        margin-bottom: 3%; } }
   .delivery-text {
     font-weight: 900;
     color: red;
     font-family: "Handlee", cursive;
     font-size: 20px; }
+  .delivery-h3 {
+    font-size: 32px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 26px; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .delivery-h3 {
+        text-align: center; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .delivery-h3 {
+        font-size: 20px; } }
 
 .footer {
   height: 3.5rem;

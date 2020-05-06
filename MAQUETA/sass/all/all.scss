@@ -84,6 +84,9 @@ li {
   border: none;
   border-radius: 100px;
   margin-right: 10px;
+  @include respond(phone) {
+    margin-right: 0;
+  }
 }
 @mixin flex-center {
   display: flex;
@@ -102,4 +105,17 @@ li {
 }
 .white {
   color: white;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  margin-top: 2rem !important;
+  @include respond(phone) {
+    display: block;
+  }
 }
