@@ -74,3 +74,32 @@ li {
   margin: 5px 0;
   background-color: $color-red-1;
 }
+.outline {
+  border: 2px solid $color-red-1;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.fill {
+  background-color: $color-yellow-1;
+  border: none;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.white {
+  color: white;
+}

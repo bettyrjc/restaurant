@@ -1,7 +1,10 @@
+@import "./all/mixins.scss"; //
 @import "./all/all.scss"; //
+@import "./individual.scss"; //
 body {
   background-color: #f4f4f4;
   margin: 0;
+  // background-color: blueviolet;
 }
 
 .header {
@@ -15,6 +18,28 @@ body {
   &-logo {
     font-family: "Handlee", cursive;
     font-size: 32px;
+    @include respond(phone-land) {
+      font-size: 28px;
+      margin-right: 6%;
+    }
+    @include respond(phone) {
+      font-size: 22px;
+      margin-right: 0%;
+      margin: 0 3%;
+    }
+  }
+  &-menuicon {
+    position: relative;
+    top: -1000px;
+    @include respond(phone) {
+      top: 0;
+    }
+
+    &-icon {
+      fill: $color-gray-1;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
   }
   &-search {
     &-input {
@@ -24,6 +49,14 @@ body {
       border: 1px solid $color-gray-2;
       padding-left: 2rem;
       position: relative;
+
+      @include respond(phone-land) {
+        width: 15rem;
+        // margin-left: 1%;
+      }
+      @include respond(phone) {
+        width: 7rem;
+      }
     }
     &-icon {
       cursor: pointer;
@@ -39,6 +72,10 @@ body {
         width: 1.5rem;
         height: 1.5rem;
       }
+
+      @include respond(phone) {
+        margin-left: -8.5rem;
+      }
     }
   }
   &-navegation {
@@ -50,9 +87,17 @@ body {
       padding-left: 10px;
       @include font-text-2;
 
+      @include respond(phone-land) {
+        @include font-text-2;
+      }
+
       &:hover {
         text-decoration: underline;
       }
+    }
+    @include respond(phone) {
+      position: relative;
+      top: -1000px;
     }
   }
 }
@@ -60,6 +105,10 @@ body {
 .container {
   background-color: white;
   margin: 0 10%;
+
+  @include respond(phone) {
+    margin: 0;
+  }
 }
 // slider
 .slider {
@@ -73,49 +122,101 @@ body {
     height: 100%;
     width: 100%;
   }
+
+  @include respond(phone-land) {
+    width: 90%;
+  }
+  @include respond(phone) {
+    width: 80%;
+  }
 }
 // favoritos
+.image {
+  width: 100%;
+  position: relative;
+}
 .favorites {
+  background-image: url("../img/azyl.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+
+  @include respond(phone-land) {
+    background-image: none;
+  }
   &-title {
-    @include font-title-1;
-    color: $color-gray-1;
+    @include font-title-2;
+    color: white;
     text-transform: uppercase;
     text-align: center;
+    margin: 0;
+    padding-top: 20px;
+
+    @include respond(phone-land) {
+      color: black;
+    }
   }
 
   &-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.5rem;
-    padding: 1rem;
+    grid-template-columns: repeat(3, 330px);
+    margin-left: 7%;
+    @include respond(tab-big) {
+      grid-template-columns: repeat(3, 230px);
+    }
+    @include respond(phone-land) {
+      display: block;
+      margin-left: 0;
+    }
   }
 
   &-box {
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 30rem;
     margin-top: 0.5rem;
-
+    margin-right: 5px;
+    height: 350px;
+    @include respond(tab-big) {
+      height: 380px;
+    }
+    @include respond(phone-land) {
+      margin-right: 0px;
+      height: 320px;
+      width: 100%;
+    }
     &-img {
+      width: 98%;
       img {
+        margin: 0;
         width: 100%;
-        height: 20rem;
+        height: 15rem;
       }
     }
     &-title {
-      @include font-title-2;
-      color: $color-gray-1;
-
+      @include font-title-3;
+      color: white;
       margin: 0;
+      @include respond(phone-land) {
+        color: black;
+      }
     }
     &-text {
       padding: 5px;
       margin: 0;
       @include font-text-4;
-      color: $color-gray-1;
+      color: white;
+
+      @include respond(phone-land) {
+        padding: 0;
+        @include font-text-3;
+        color: black;
+      }
+      @include respond(phone) {
+        padding: 0 10px;
+      }
     }
   }
 }
@@ -127,6 +228,10 @@ body {
     text-align: center;
     margin: 0;
     margin-top: 1rem;
+
+    @include respond(phone-land) {
+      font-size: 26px;
+    }
   }
   &-boxMain {
     display: flex;
@@ -164,12 +269,20 @@ body {
       img {
         width: 98%;
         height: 20rem;
+
+        @include respond(phone-land) {
+          height: 13rem;
+        }
       }
     }
     &-title {
       color: $color-blue-1;
       @include font-title-3;
       margin: 0;
+
+      @include respond(phone-land) {
+        font-size: 16px;
+      }
     }
     &-text {
       padding: 5px;
