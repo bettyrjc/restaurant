@@ -638,8 +638,21 @@ li {
     background-color: #003cff;
     color: white; }
 
-.blog-grill-box-text {
-  flex-direction: column; }
+.blog-grill-box {
+  cursor: pointer; }
+  .blog-grill-box-text {
+    flex-direction: column; }
+    .blog-grill-box-text p {
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      font-size: 10px;
+      color: white;
+      text-align: center; }
+
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
 
 body {
   background-color: #f4f4f4;
@@ -908,6 +921,12 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem; }
+    @media (min-width: 37.5625em) and (max-width: 64em) {
+      .categories-grilla {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .categories-grilla {
+        grid-template-columns: repeat(1, 1fr); } }
   .categories-box {
     position: relative;
     width: 100%;

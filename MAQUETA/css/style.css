@@ -649,6 +649,15 @@ li {
       color: white;
       text-align: center; }
 
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .change-icon {
+    transform: all 0.3s; }
+    .change-icon:hover {
+      fill: #bebebe; }
+
 body {
   background-color: #f4f4f4;
   margin: 0; }

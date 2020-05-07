@@ -60,3 +60,15 @@
     }
   }
 }
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &-icon {
+    transform: all 0.3s;
+    &:hover {
+      fill: $color-gray-2;
+    }
+  }
+}
