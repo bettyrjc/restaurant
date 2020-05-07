@@ -219,3 +219,128 @@
   flex-direction: column;
   background-image: url("https://3.bp.blogspot.com/-otJEC5GINdw/Vvos12wGUpI/AAAAAAAAKzs/4UdFNgC7278MQ_ypmvn7Kowzitc8klUvQ/s1600/Foto1.JPG");
 }
+// pago uno- datos tarjeta
+
+.cards-paid {
+  margin: 0 0 15px 2%;
+  padding: 0 3% 5%;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+
+  @include respond(phone) {
+    box-shadow: none;
+  }
+
+  &-box {
+    &-title {
+      @include font-title-1;
+      text-transform: uppercase;
+      font-size: 18px;
+      color: $color-blue-1;
+      text-align: center;
+      padding-bottom: 3%;
+    }
+    &-description {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 0 15px;
+
+      @include respond(tab-land) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      &-text {
+        margin: 5px 0;
+        @include flex-start;
+        h5 {
+          margin-right: 10px;
+          @include font-title-1;
+          font-size: 12px;
+        }
+        p {
+          @include font-text-4;
+        }
+      }
+    }
+  }
+}
+
+// proceso de pago
+.process-paid {
+  padding-top: 0;
+  &-description {
+    width: 100%;
+    p {
+      @include font-text-4;
+      padding-top: 5px;
+    }
+    &-total {
+      @include flex;
+      margin-top: 5%;
+      h3 {
+        @include font-text-2;
+        font-weight: 500;
+      }
+      p {
+        @include font-title-2;
+        font-size: 20px;
+        color: $color-blue-2;
+      }
+    }
+  }
+
+  &-delivery {
+    width: 100%;
+    @include font-text-2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    input {
+      margin-right: 2%;
+      cursor: pointer;
+    }
+
+    @include respond(phone) {
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.process-bar-container {
+  padding-top: 10px;
+}
+
+// pago paso dos- factura
+
+.ticket {
+  padding: 15px;
+  margin: 2% 20% 0;
+  box-shadow: none;
+  border: 1px solid $color-gray-2;
+  @include respond(phone) {
+    margin: 2%;
+  }
+  &-progress {
+    left: 30%;
+
+    @include respond(phone) {
+      left: 10px;
+    }
+  }
+
+  &-box {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-total {
+    justify-content: flex-end;
+    h3 {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

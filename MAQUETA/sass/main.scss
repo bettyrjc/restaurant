@@ -1,7 +1,10 @@
 @import "./all/mixins.scss"; //
 @import "./all/all.scss"; //
 @import "./individual.scss"; //
+@import "./all/bar.scss";
 @import "./card.scss"; //
+@import "./blog.scss"; //
+
 body {
   background-color: #f4f4f4;
   margin: 0;
@@ -104,6 +107,7 @@ body {
 }
 
 .container {
+  min-height: 80vh;
   background-color: white;
   margin: 0 10%;
 
@@ -310,6 +314,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
+
+    @include respond(tab) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &-box {

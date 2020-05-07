@@ -49,6 +49,9 @@ li {
   border: none;
   border-radius: 100px;
   margin-right: 10px; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .fill {
+      margin-right: 0; } }
 
 .white {
   color: white; }
@@ -233,12 +236,67 @@ li {
     font-size: 12px;
     font-family: "Roboto", sans-serif; }
 
+.progress {
+  width: 38%;
+  padding: 2px;
+  background: rgba(190, 190, 190, 0.15);
+  border-radius: 4px;
+  position: relative;
+  left: 60%; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .progress {
+      left: 10px;
+      width: 90%; } }
+
+.progress-bar {
+  height: 10px;
+  border-radius: 4px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color; }
+
+#five:checked ~ .progress > .progress-bar {
+  width: 5%;
+  background-color: #ffc300; }
+
+#twentyfive:checked ~ .progress > .progress-bar {
+  width: 25%;
+  background-color: #ffc300; }
+
+#fifty:checked ~ .progress > .progress-bar {
+  width: 50%;
+  background-color: #ffc300; }
+
+#seventyfive:checked ~ .progress > .progress-bar {
+  width: 75%;
+  background-color: #ffc300; }
+
+#onehundred:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #ffc300; }
+
+.radio {
+  display: none; }
+
+.label {
+  display: inline-block;
+  margin: 0 5px 20px;
+  padding: 3px 8px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  border-radius: 3px;
+  cursor: pointer; }
+
+.radio:checked + .label {
+  color: white;
+  background: rgba(0, 0, 0, 0.25); }
+
 .cards-card {
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
   box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
-  height: 220px;
+  height: 258px;
   margin-bottom: 3rem; }
   @media (min-width: 6.25em) and (max-width: 64em) {
     .cards-card {
@@ -335,6 +393,39 @@ li {
           justify-content: space-between;
           padding-right: 15px;
           font-size: 20px; } }
+    .cards-card-box-btns {
+      margin-top: 2%; }
+      @media (min-width: 6.25em) and (max-width: 64em) {
+        .cards-card-box-btns {
+          display: flex;
+          justify-content: center;
+          align-items: center; } }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .cards-card-box-btns {
+          flex-direction: column; } }
+      .cards-card-box-btns-btn {
+        border-radius: 100px !important;
+        border-color: #ffc300;
+        width: 8rem;
+        padding: 5px;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        color: #707070;
+        transition: all 0.4s;
+        outline: none;
+        box-shadow: 3px 3px 5px 2px rgba(112, 112, 112, 0.2); }
+        .cards-card-box-btns-btn:hover:hover {
+          background-color: #707070;
+          color: white;
+          border-color: #707070; }
+        @media (min-width: 6.25em) and (max-width: 37.5em) {
+          .cards-card-box-btns-btn {
+            width: 98%;
+            padding: 8px;
+            font-size: 16px;
+            color: black;
+            letter-spacing: 1px;
+            margin: 4% 1% 0; } }
 
 .process {
   margin-left: 10%;
@@ -393,6 +484,162 @@ li {
     @media (min-width: 6.25em) and (max-width: 37.5em) {
       .process-btn {
         font-size: 18px; } }
+
+.blog {
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("https://3.bp.blogspot.com/-otJEC5GINdw/Vvos12wGUpI/AAAAAAAAKzs/4UdFNgC7278MQ_ypmvn7Kowzitc8klUvQ/s1600/Foto1.JPG"); }
+
+.cards-paid {
+  margin: 0 0 15px 2%;
+  padding: 0 3% 5%;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2); }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .cards-paid {
+      box-shadow: none; } }
+  .cards-paid-box-title {
+    font-size: 32px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #003cff;
+    text-align: center;
+    padding-bottom: 3%; }
+  .cards-paid-box-description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 0 15px; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .cards-paid-box-description {
+        grid-template-columns: repeat(1, 1fr); } }
+    .cards-paid-box-description-text {
+      margin: 5px 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .cards-paid-box-description-text h5 {
+        margin-right: 10px;
+        font-size: 32px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-size: 12px; }
+      .cards-paid-box-description-text p {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif; }
+
+.process-paid {
+  padding-top: 0; }
+  .process-paid-description {
+    width: 100%; }
+    .process-paid-description p {
+      font-size: 12px;
+      font-family: "Roboto", sans-serif;
+      padding-top: 5px; }
+    .process-paid-description-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5%; }
+      .process-paid-description-total h3 {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500; }
+      .process-paid-description-total p {
+        font-size: 28px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: #2256ff; }
+  .process-paid-delivery {
+    width: 100%;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .process-paid-delivery input {
+      margin-right: 2%;
+      cursor: pointer; }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .process-paid-delivery {
+        justify-content: flex-start;
+        margin-bottom: 10px; } }
+
+.process-bar-container {
+  padding-top: 10px; }
+
+.ticket {
+  padding: 15px;
+  margin: 2% 20% 0;
+  box-shadow: none;
+  border: 1px solid #bebebe; }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .ticket {
+      margin: 2%; } }
+  .ticket-progress {
+    left: 30%; }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .ticket-progress {
+        left: 10px; } }
+  .ticket-box {
+    border: none;
+    padding: 0;
+    margin: 0; }
+  .ticket-total {
+    justify-content: flex-end; }
+    .ticket-total h3 {
+      margin-right: 10px;
+      font-size: 12px; }
+    .ticket-total p {
+      font-size: 16px; }
+
+.blog-container {
+  padding: 2% 5%; }
+
+.blog-list-card {
+  box-shadow: none;
+  border: 1px solid #f4f4f4; }
+  @media (min-width: 37.5625em) and (max-width: 64em) {
+    .blog-list-card {
+      display: flex;
+      height: 258px; } }
+  @media (min-width: 6.25em) and (max-width: 37.5em) {
+    .blog-list-card {
+      display: block;
+      width: 100%;
+      margin: 0; } }
+  .blog-list-card-image {
+    height: 100%; }
+    @media (min-width: 6.25em) and (max-width: 64em) {
+      .blog-list-card-image img {
+        display: initial;
+        height: 100%;
+        width: 100%; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .blog-list-card-image img {
+        margin: 0;
+        width: 100%; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .blog-list-card-image {
+        margin: 0;
+        width: 100%; } }
+  @media (min-width: 6.25em) and (max-width: 64em) {
+    .blog-list-card-btns {
+      display: block; } }
+  .blog-list-card-btn {
+    background-color: #003cff;
+    color: white; }
+
+.blog-grill-box-text {
+  flex-direction: column; }
 
 body {
   background-color: #f4f4f4;
@@ -477,6 +724,7 @@ body {
         top: -1000px; } }
 
 .container {
+  min-height: 80vh;
   background-color: white;
   margin: 0 10%; }
   @media (min-width: 6.25em) and (max-width: 37.5em) {
@@ -641,8 +889,6 @@ body {
     margin: 0;
     font-size: 12px;
     font-family: "Roboto", sans-serif; }
-  .workers-box-content {
-    padding-right: 4%; }
 
 .categories {
   border: 1px solid #bebebe;
@@ -713,6 +959,11 @@ body {
     transform: scaleX(1); }
     .delivery-btn:hover {
       transform: scaleY(1.1); }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .delivery-btn {
+        width: 98%;
+        margin: 0 1%;
+        margin-bottom: 3%; } }
   .delivery-text {
     font-weight: 900;
     color: red;
