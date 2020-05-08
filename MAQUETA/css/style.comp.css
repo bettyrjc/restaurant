@@ -653,18 +653,21 @@ li {
   display: flex;
   align-items: center;
   justify-content: flex-end; }
+  .change-icon {
+    transform: all 0.3s; }
+    .change-icon:hover {
+      fill: #bebebe; }
 
 body {
-  background-color: #f4f4f4;
+  background-color: white;
   margin: 0; }
 
 .header {
   display: flex;
-  background-color: white;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   height: 80px;
-  border-bottom: 1px solid #bebebe;
   padding: 0 0px 0 10px; }
   .header-logo {
     font-family: "Handlee", cursive;
@@ -677,7 +680,9 @@ body {
       .header-logo {
         font-size: 22px;
         margin-right: 0%;
-        margin: 0 3%; } }
+        margin: 0 3%;
+        text-align: center;
+        width: 100%; } }
   .header-menuicon {
     position: relative;
     top: -1000px; }
@@ -700,7 +705,12 @@ body {
         width: 15rem; } }
     @media (min-width: 6.25em) and (max-width: 37.5em) {
       .header-search-input {
-        width: 7rem; } }
+        position: relative;
+        top: -1000px;
+        width: 0; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .header-search-input.active {
+        transition: all 0.5s linear; } }
   .header-search-icon {
     cursor: pointer;
     width: 1rem;
@@ -710,12 +720,29 @@ body {
     margin-left: -2.5rem;
     margin-top: 10px; }
     .header-search-icon:hover {
-      margin-top: 5px;
+      margin-top: 10px;
       width: 1.5rem;
       height: 1.5rem; }
+      @media (min-width: 6.25em) and (max-width: 37.5em) {
+        .header-search-icon:hover {
+          margin-top: 8px;
+          width: 1.2rem;
+          height: 1.2rem; } }
     @media (min-width: 6.25em) and (max-width: 37.5em) {
       .header-search-icon {
-        margin-left: -8.5rem; } }
+        margin-left: 0; } }
+  .header-phone {
+    position: relative;
+    top: -100px;
+    width: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .header-phone-input {
+      padding: 10px;
+      border-radius: 100px;
+      border: 1px solid #bebebe; }
   .header-navegation {
     cursor: pointer;
     display: flex;
@@ -727,14 +754,19 @@ body {
       font-family: "Roboto", sans-serif; }
       @media (max-width: 50em) {
         .header-navegation li {
-          font-size: 16px;
+          font-size: 14px;
           font-family: "Roboto", sans-serif; } }
       .header-navegation li:hover {
         text-decoration: underline; }
     @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .header-navegation.active {
+        transition: all 0.2s ease-in; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
       .header-navegation {
         position: relative;
-        top: -1000px; } }
+        top: -1000px;
+        width: 0;
+        height: 0; } }
 
 .container {
   min-height: 80vh;
@@ -904,7 +936,6 @@ body {
     font-family: "Roboto", sans-serif; }
 
 .categories {
-  border: 1px solid #bebebe;
   border-top: none;
   padding-bottom: 1rem; }
   .categories-title {
@@ -1002,7 +1033,7 @@ body {
 
 .footer {
   height: 3.5rem;
-  background-color: #bebebe;
+  background-color: #2256ff;
   display: flex;
   justify-content: flex-start;
   align-items: center; }
@@ -1010,4 +1041,4 @@ body {
     margin-left: 1rem;
     width: 2rem;
     height: 2rem;
-    fill: black; }
+    fill: white; }

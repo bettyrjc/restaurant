@@ -10,23 +10,25 @@
   <body>
     <header class="header">
       <div class="header-menuicon">
-        <svg class="header-menuicon-icon">
-          <use href="img/sprite.svg#icon-text"></use>
+        <svg class="header-menuicon-icon"  id="menu" >
+          <use href="img/sprite.svg#icon-menu"></use>
         </svg>
       </div>
-      <div class="header-logo">
+      <div class="header-logo" id="logo">
         Restauranta
       </div>
       <div class="header-search">
         <input
+          id="search-input"
           class="header-search-input"
           type="text"
           placeholder="Busca tu comida..."
         />
-        <svg class="header-search-icon">
+        <svg class="header-search-icon" id="search-lupa">
           <use href="img/sprite.svg#icon-search"></use>
         </svg>
       </div>
+    </div>
 
       <ul class="header-navegation">
         <li>Carrito</li>
@@ -37,21 +39,40 @@
     </header>
     <!-- container main -->
     <main class="container">
-      <div class="slider">
-        <div id="left">
-          <svg class="workers-boxMain-icon">
-            <use href="img/sprite.svg#icon-chevron-small-left"></use>
-          </svg>
+      <div class="slider" > 
+        <div class="slider-main">
+          <div id="left" onclick="avanzaSlide(-1)">
+            <svg class="workers-boxMain-icon">
+              <use href="img/sprite.svg#icon-chevron-small-left"></use>
+            </svg>
+          </div>
+          <div id="slider" class="slider-container">
+            <img
+            src="img/two.jpg"
+            alt="emplatado"
+            class="slider-img fade"
+            />
+            <img
+            src="img/three.jpeg"
+            alt="emplatado"
+            class="slider-img fade"
+            />
+            <img
+            src="img/one.jpeg"
+            alt="emplatado"
+            class="slider-img fade"
+            />
+          </div>
+          <div id="right" onclick="avanzaSlide(1)">
+            <svg class="workers-boxMain-icon">
+              <use href="img/sprite.svg#icon-chevron-small-right"></use>
+            </svg>
+          </div>
         </div>
-        <img
-          src="https://image.freepik.com/vector-gratis/composicion-isometrica-infografia-horizontal-cocina-profesional-corte-mezclando-ingredientes-cocinar-freir-hornear-servir-clientes-ilustracion-vectorial_1284-30101.jpg"
-          alt="emplatado"
-          class="slider-img"
-        />
-        <div id="right">
-          <svg class="workers-boxMain-icon">
-            <use href="img/sprite.svg#icon-chevron-small-right"></use>
-          </svg>
+        <div class="slider-box">
+          <div class="slider-box-circle active" onclick="position(1)"></div>
+          <div class="slider-box-circle" onclick="position(2)"></div>
+          <div class="slider-box-circle" onclick="position(3)"></div>
         </div>
       </div>
       <!-- <div class="trapecio"></div> -->
@@ -284,5 +305,7 @@
         <use href="img/sprite.svg#icon-whatsapp"></use>
       </svg>
     </footer>
+    <script src="./js/slider.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

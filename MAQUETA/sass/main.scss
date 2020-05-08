@@ -6,19 +6,19 @@
 @import "./blog.scss"; //
 
 body {
-  background-color: #f4f4f4;
+  background-color: white;
   margin: 0;
   // background-color: blueviolet;
 }
 
 .header {
-  display: flex;
+  @include flex;
   background-color: white;
-  justify-content: space-between;
-  align-items: center;
   height: 80px;
-  border-bottom: 1px solid $color-gray-2;
+  // border-bottom: 1px solid $color-gray-2;
   padding: 0 0px 0 10px;
+  @include respond(phone) {
+  }
   &-logo {
     font-family: "Handlee", cursive;
     font-size: 32px;
@@ -30,6 +30,8 @@ body {
       font-size: 22px;
       margin-right: 0%;
       margin: 0 3%;
+      text-align: center;
+      width: 100%;
     }
   }
   &-menuicon {
@@ -56,10 +58,16 @@ body {
 
       @include respond(phone-land) {
         width: 15rem;
-        // margin-left: 1%;
       }
       @include respond(phone) {
-        width: 7rem;
+        position: relative;
+        top: -1000px;
+        width: 0;
+      }
+      &.active {
+        @include respond(phone) {
+          transition: all 0.5s linear;
+        }
       }
     }
     &-icon {
@@ -72,14 +80,31 @@ body {
       margin-top: 10px;
 
       &:hover {
-        margin-top: 5px;
+        margin-top: 10px;
         width: 1.5rem;
         height: 1.5rem;
+        @include respond(phone) {
+          margin-top: 8px;
+          width: 1.2rem;
+          height: 1.2rem;
+        }
       }
 
       @include respond(phone) {
-        margin-left: -8.5rem;
+        margin-left: 0;
       }
+    }
+  }
+  &-phone {
+    position: relative;
+    top: -100px;
+    width: 0;
+    height: 100%;
+    @include flex;
+    &-input {
+      padding: 10px;
+      border-radius: 100px;
+      border: 1px solid $color-gray-2;
     }
   }
   &-navegation {
@@ -92,16 +117,23 @@ body {
       @include font-text-2;
 
       @include respond(phone-land) {
-        @include font-text-2;
+        @include font-text-3;
       }
 
       &:hover {
         text-decoration: underline;
       }
     }
+    &.active {
+      @include respond(phone) {
+        transition: all 0.2s ease-in;
+      }
+    }
     @include respond(phone) {
       position: relative;
       top: -1000px;
+      width: 0;
+      height: 0;
     }
   }
 }
@@ -117,22 +149,43 @@ body {
 }
 // slider
 .slider {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30rem;
   width: 99%;
-
-  &-img {
-    height: 100%;
+  &-main {
+    height: 30rem;
+    @include flex;
+  }
+  &-container {
+    overflow: hidden;
+    @include flex;
+    height: 95%;
     width: 100%;
-  }
+    img {
+      width: 100vw;
+      height: 100%;
+      vertical-align: top;
+      transition: 2s;
+    }
 
-  @include respond(phone-land) {
-    width: 90%;
+    @include respond(phone-land) {
+      width: 90%;
+    }
+    @include respond(phone) {
+      width: 80%;
+    }
   }
-  @include respond(phone) {
-    width: 80%;
+  &-box {
+    @include flex-center;
+    &-circle {
+      height: 1rem;
+      width: 1rem;
+      margin: 5px 5px 0;
+      background-color: $color-gray-2;
+      border-radius: 100%;
+
+      &.active {
+        background-color: $color-blue-2;
+      }
+    }
   }
 }
 // favoritos
@@ -239,9 +292,7 @@ body {
     }
   }
   &-boxMain {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex;
 
     &-icon {
       width: 2rem;
@@ -260,6 +311,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.1rem;
     padding: 1rem 0.5rem;
+
+    // @include respond(phone) {
+    //   grid-template-columns: 1fr;
+    // }
   }
 
   &-box {
@@ -297,7 +352,6 @@ body {
   }
 }
 .categories {
-  border: 1px solid $color-gray-2;
   border-top: none;
   padding-bottom: 1rem;
 
@@ -405,7 +459,12 @@ body {
 }
 .footer {
   height: 3.5rem;
-  background-color: $color-gray-2;
+  background-color: $color-blue-2;
+  background: linear-gradient(
+    90deg,
+    rgba(21, 87, 224, 1) 0%,
+    rgba(102, 165, 187, 0.7175245098039216) 100%
+  );
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -413,6 +472,6 @@ body {
     margin-left: 1rem;
     width: 2rem;
     height: 2rem;
-    fill: black;
+    fill: white;
   }
 }
