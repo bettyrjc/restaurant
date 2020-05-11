@@ -69,6 +69,16 @@ li {
     .grilla {
       display: block; } }
 
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s; }
+
+@keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
 * {
   margin: 0; }
 
@@ -777,20 +787,42 @@ body {
       margin: 0; } }
 
 .slider {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30rem;
   width: 99%; }
-  .slider-img {
-    height: 100%;
+  .slider-main {
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .slider-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95%;
     width: 100%; }
-  @media (max-width: 50em) {
-    .slider {
-      width: 90%; } }
-  @media (min-width: 6.25em) and (max-width: 37.5em) {
-    .slider {
-      width: 80%; } }
+    .slider-container img {
+      width: 100vw;
+      height: 100%;
+      vertical-align: top;
+      transition: 2s; }
+    @media (max-width: 50em) {
+      .slider-container {
+        width: 90%; } }
+    @media (min-width: 6.25em) and (max-width: 37.5em) {
+      .slider-container {
+        width: 80%; } }
+  .slider-box {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .slider-box-circle {
+      height: 1rem;
+      width: 1rem;
+      margin: 5px 5px 0;
+      background-color: #bebebe;
+      border-radius: 100%; }
+      .slider-box-circle.active {
+        background-color: #2256ff; }
 
 .image {
   width: 100%;
@@ -890,8 +922,8 @@ body {
 
 .workers-boxMain {
   display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   .workers-boxMain-icon {
     width: 2rem;
     height: 2rem;
@@ -1034,6 +1066,7 @@ body {
 .footer {
   height: 3.5rem;
   background-color: #2256ff;
+  background: linear-gradient(90deg, #1557e0 0%, rgba(102, 165, 187, 0.717525) 100%);
   display: flex;
   justify-content: flex-start;
   align-items: center; }

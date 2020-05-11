@@ -279,6 +279,7 @@ body {
   }
 }
 .workers {
+  margin-bottom: 20px;
   &-title {
     @include font-title-1;
     color: $color-gray-1;
@@ -307,17 +308,18 @@ body {
     }
   }
   &-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.1rem;
-    padding: 1rem 0.5rem;
+    overflow: hidden;
+    @include flex;
+    padding: 0.5rem 0;
 
-    // @include respond(phone) {
-    //   grid-template-columns: 1fr;
-    // }
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-box {
+    width: 383px;
+    height: 384px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -327,7 +329,7 @@ body {
 
     &-img {
       img {
-        width: 98%;
+        width: 100%;
         height: 20rem;
 
         @include respond(phone-land) {
@@ -348,6 +350,17 @@ body {
       padding: 5px;
       margin: 0;
       @include font-text-4;
+    }
+  }
+  &-circle {
+    height: 0.5rem;
+    width: 5rem;
+    margin: 5px 5px 0;
+    background-color: $color-gray-2;
+    border-radius: 50px;
+
+    &.active {
+      background-color: $color-blue-2;
     }
   }
 }
