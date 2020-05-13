@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+  height: 340px;
+  margin-bottom: 3rem;
+
+  @include respond(tab-land) {
+    display: block;
+    height: 30%;
+  }
+  &-image {
+    height: 100%;
+    img {
+      width: 300px;
+      height: 100%;
+      @include respond(tab-land) {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  &-box {
+    padding: 10px 0;
+    margin-left: 3%;
+    &-title {
+      @include font-title-2;
+      color: $color-gray-1;
+    }
+    &-text {
+      @include font-text-2;
+      color: $color-gray-1;
+      padding-right: 15%;
+      margin: 10px 0;
+    }
+    &-secondary {
+      margin-right: 3%;
+      @include font-title-2;
+      font-size: 18px;
+      color: $color-gray-1;
+      @include respond(phone) {
+        font-size: 14px;
+      }
+    }
+    &-calification {
+      @include flex-start;
+      &-stars {
+        &-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+          fill: $color-yellow-1;
+        }
+      }
+    }
+    &-ingredients {
+      margin: 10px 0;
+      @include flex-start;
+      &-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        padding: 5px;
+      }
+      @include respond(phone) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+      }
+    }
+    &-price {
+      @include flex-start;
+      &-number {
+        @include font-title-2;
+        color: $color-blue-2;
+      }
+
+      @include respond(phone) {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15px;
+      }
+    }
+    &-btns {
+      @include respond(tab-land) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &-btn {
+        border-radius: 100px !important;
+        border-color: $color-yellow-1;
+        width: 8rem;
+        margin-top: 1.5rem;
+        padding: 7px;
+        @include font-text-3;
+        color: $color-gray-1;
+        transition: all 0.4s;
+        outline: none;
+        &:hover {
+          box-shadow: 6px 6px 10px 5px rgba($color-gray-1, 0.2);
+        }
+      }
+    }
+  }
+}
+.comments {
+  &-title {
+    @include font-title-3;
+    color: $color-gray-1;
+    margin-bottom: 15px;
+  }
+  background-color: white;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+.comment {
+  background-color: #f4f4f4;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  // box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+  @include respond(phone) {
+    grid-template-columns: 7rem 1fr;
+  }
+  &-imgs {
+    @include flex;
+    img {
+      border-radius: 100%;
+      width: 120px;
+      height: 120px;
+      margin-left: 10px;
+      @include respond(phone) {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+  &-description {
+    &-box {
+      padding: 10px;
+      @include flex;
+      @include respond(phone) {
+        display: block;
+      }
+      h3 {
+        @include font-title-2;
+        font-size: 20px;
+        @include respond(tab) {
+          font-size: 14px;
+        }
+        @include respond(phone) {
+          font-size: 14px;
+        }
+      }
+      p {
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        @include respond(phone) {
+          font-size: 10px;
+        }
+      }
+    }
+    &-text {
+      padding: 10px;
+      @include font-text-4;
+    }
+  }
+}

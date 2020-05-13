@@ -1,0 +1,145 @@
+.header {
+  @include flex;
+  background-color: white;
+  height: 80px;
+  // border-bottom: 1px solid $color-gray-2;
+  padding: 0 0px 0 10px;
+  @include respond(phone) {
+  }
+  &-logo {
+    font-family: "Handlee", cursive;
+    font-size: 32px;
+    @include respond(phone-land) {
+      font-size: 28px;
+      margin-right: 6%;
+    }
+    @include respond(phone) {
+      font-size: 22px;
+      margin-right: 0%;
+      margin: 0 3%;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &-menuicon {
+    position: relative;
+    top: -1000px;
+    @include respond(phone) {
+      top: 0;
+    }
+
+    &-icon {
+      fill: $color-gray-1;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+  &-search {
+    &-input {
+      height: 2rem;
+      width: 30rem;
+      border-radius: 100px;
+      border: 1px solid $color-gray-2;
+      padding-left: 2rem;
+      position: relative;
+
+      @include respond(phone-land) {
+        width: 15rem;
+      }
+      @include respond(phone) {
+        position: relative;
+        top: -1000px;
+        width: 0;
+      }
+      &.active {
+        @include respond(phone) {
+          transition: all 0.5s linear;
+        }
+      }
+    }
+    &-icon {
+      cursor: pointer;
+      width: 1rem;
+      height: 1rem;
+      fill: $color-gray-1;
+      position: absolute;
+      margin-left: -2.5rem;
+      margin-top: 10px;
+
+      &:hover {
+        margin-top: 10px;
+        width: 1.5rem;
+        height: 1.5rem;
+        @include respond(phone) {
+          margin-top: 8px;
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+
+      @include respond(phone) {
+        margin-left: 0;
+      }
+    }
+  }
+  &-phone {
+    position: relative;
+    top: -100px;
+    width: 0;
+    height: 100%;
+    @include flex;
+    &-input {
+      padding: 10px;
+      border-radius: 100px;
+      border: 1px solid $color-gray-2;
+    }
+  }
+  &-navegation {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      padding-left: 10px;
+      @include font-text-2;
+
+      @include respond(phone-land) {
+        @include font-text-3;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &.active {
+      @include respond(phone) {
+        transition: all 0.2s ease-in;
+      }
+    }
+    @include respond(phone) {
+      position: relative;
+      top: -1000px;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+//
+.footer {
+  height: 3.5rem;
+  background-color: $color-blue-2;
+  background: linear-gradient(
+    90deg,
+    rgba(21, 87, 224, 1) 0%,
+    rgba(102, 165, 187, 0.7175245098039216) 100%
+  );
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &-icon {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+  }
+}

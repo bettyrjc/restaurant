@@ -1,0 +1,74 @@
+.blog-container {
+  padding: 2% 5%;
+}
+.blog-list {
+  &-card {
+    box-shadow: none;
+    border: 1px solid #f4f4f4;
+    @include respond(tab) {
+      display: flex;
+      height: 258px;
+    }
+    @include respond(phone) {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+    &-image {
+      height: 100%;
+
+      img {
+        @include respond(tab-land) {
+          display: initial;
+          height: 100%;
+          width: 100%;
+        }
+        @include respond(phone) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+      @include respond(phone) {
+        margin: 0;
+        width: 100%;
+      }
+    }
+    &-btns {
+      @include respond(tab-land) {
+        display: block;
+      }
+    }
+    &-btn {
+      background-color: $color-blue-1;
+      color: white;
+    }
+  }
+}
+.blog-grill {
+  &-box {
+    cursor: pointer;
+    &-text {
+      flex-direction: column;
+
+      p {
+        @include font-text-2;
+        font-size: 10px;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+}
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &-icon {
+    transform: all 0.3s;
+    &:hover {
+      fill: $color-gray-2;
+    }
+  }
+}

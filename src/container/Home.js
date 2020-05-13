@@ -4,11 +4,10 @@ import { connect } from "react-redux";
 
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
-import Sidenav from "../components/layout/nav";
-import slider from "../components/styles/images/img/slider.png";
-
+import Slider from "../components/layout/Slider";
+import Worker from "../components/layout/Workers";
 import { getFoods, getFood } from "../actions/foodActions";
-
+import { init } from "../components/utils/utils";
 class Home extends Component {
   state = {
     value: "",
@@ -16,6 +15,7 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.getFoods();
+    init();
   }
 
   getFoodInput = ({ target: { value } }) => {
@@ -24,90 +24,103 @@ class Home extends Component {
       this.props.getFood(value);
     }
   };
+
   render() {
     const { foods, search } = this.props;
     return (
       <React.Fragment>
         <Header clicked={this.getFoodInput} />
         <div className="container">
-          <Sidenav />
+          <div className="categories-grilla">
+            {search === null || search === undefined ? (
+              <div>Busca algo</div>
+            ) : (
+              search.map((fod) => (
+                <div className="categories-box" key={fod.idMeal}>
+                  <div className="categories-box-img">
+                    <img src={fod.strMealThumb} alt={fod.strMeal} />
+                  </div>
+                  <div className="categories-box-text">
+                    <h2>{fod.strMeal}</h2>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+          <Slider />
           <div>
-            <div className="container-food">
-              {search === null || search === undefined ? (
-                <div>Busca algo</div>
-              ) : (
-                search.map((fod) => <div key={fod.idMeal}>{fod.strMeal}</div>)
-              )}
-            </div>
-            <div className="container-slider">
-              <img src={slider} alt="slider" />
-            </div>
+            <div className="favorites">
+              <h1 className="favorites-title">Favoritos</h1>
+              <div className="favorites-container">
+                <div className="favorites-box">
+                  <div className="favorites-box-img">
+                    <img
+                      src="https://menorquina.com/media/cache/thumb_500x350/uploads/mini_plateful/c33e97373915735387931369e1d175c9d12953e1.jpeg"
+                      alt="comida uno"
+                    />
+                  </div>
+                  <h3 className="favorites-box-title">Comida</h3>
+                  <p className="favorites-box-text">
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's
+                  </p>
+                </div>
 
-            <div className="container-types">
-              <h1 className="container-types-title"> Categorias</h1>
-              <div className="container-types-main">
+                <div className="favorites-box">
+                  <div className="favorites-box-img">
+                    <img
+                      src="https://menorquina.com/media/cache/thumb_500x350/uploads/mini_plateful/c33e97373915735387931369e1d175c9d12953e1.jpeg"
+                      alt="comida uno"
+                    />
+                  </div>
+                  <h3 className="favorites-box-title">Comida</h3>
+                  <p className="favorites-box-text">
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text
+                  </p>
+                </div>
+
+                <div className="favorites-box">
+                  <div className="favorites-box-img">
+                    <img
+                      src="https://menorquina.com/media/cache/thumb_500x350/uploads/mini_plateful/c33e97373915735387931369e1d175c9d12953e1.jpeg"
+                      alt="comida uno"
+                    />
+                  </div>
+                  <h3 className="favorites-box-title">Comida</h3>
+                  <p className="favorites-box-text">
+                    is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since
+                  </p>
+                </div>
+              </div>
+            </div>
+            <Worker />
+            <div className="categories">
+              <div className="yellow"></div>
+              <div className="red"></div>
+              <div className="blue"></div>
+              <h1 className="categories-title">Categorias</h1>
+              <div className="categories-grilla">
                 {foods.map((food) => (
-                  <div className="container-types-box" key={food.idCategory}>
-                    <h1>{food.strCategory}</h1>
-                    <p>{food.strCategoryDescription}</p>
+                  <div className="categories-box" key={food.idCategory}>
+                    <div className="categories-box-img">
+                      <img src={food.strCategoryThumb} alt={food.strCategory} />
+                    </div>
+                    <div className="categories-box-text">
+                      <h2>{food.strCategory}</h2>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+            <div className="delivery">
+              <button className="delivery-btn">Ordena tu comida</button>
+              <p className="delivery-text">30 minutos y la tienes en tu casa</p>
+            </div>
             {/* trabajadores del mes */}
-            <div className="workers">
-              <h1>Trabajadores del mes</h1>
-              <p>
-                Restauranta, tiene mas de 100 empleados y en el mes de Abril
-                estos son los 10 destacados
-              </p>
-              <div className="workers-container">
-                <div className="workers-box">
-                  <h1 className="workers-box-name">Diana Venezuela</h1>
-                  <p className="workers-box-puesto">Lavaplatos</p>
-                  <p className="workers-box-puesto">
-                    Diana, ha sido nuestra trabajadora del mes por su dedicacion
-                    y amor al trabajo
-                  </p>
-                </div>
-                {/*  */}
-                <div className="workers-box">
-                  <h1 className="workers-box-name">Diana Venezuela</h1>
-                  <p className="workers-box-puesto">Lavaplatos</p>
-                  <p className="workers-box-puesto">
-                    Diana, ha sido nuestra trabajadora del mes por su dedicacion
-                    y amor al trabajo
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="favFood">
-              <h1 className="favFood-title">Comida destacada de este mes</h1>
-              <p>
-                Restauranta, hace una encuensta a sus clientes de cual ha sido
-                su comida favorita del mes
-              </p>
-              <p>
-                Este mes ha ganado el <strong>Pollo Salsa negra</strong>
-              </p>
-              <div className="favFood-container">
-                <img
-                  className="favFood-img"
-                  src="https://3.bp.blogspot.com/-3SrZPvObwkg/T81hy236_MI/AAAAAAAAAyo/lKxAQtadUvs/s1600/2012-06-04+16.09.18.jpg"
-                  alt="pollo"
-                />
-                <div className="favFood-box">
-                  <p className="favFood-box-name">Frijoles</p>
-                  <p className="favFood-box-category">
-                    <strong>Categoria:</strong>
-                    Vegana
-                  </p>
-                  <p className="workers-box-puesto">
-                    Nuestros frijoles son los mejores
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <Footer />

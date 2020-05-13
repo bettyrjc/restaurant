@@ -1,0 +1,346 @@
+.cards {
+  &-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+    height: 258px;
+    margin-bottom: 3rem;
+
+    @include respond(tab-land) {
+      display: block;
+      height: 30%;
+    }
+    &-image {
+      height: 100%;
+      img {
+        width: 220px;
+        height: 100%;
+        @include respond(tab-land) {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    &-box {
+      padding: 10px 0;
+      margin-left: 2%;
+      &-title {
+        @include font-title-2;
+        color: $color-gray-1;
+        font-size: 22px;
+
+        @include respond(phone) {
+          font-size: 28px;
+        }
+      }
+      &-text {
+        @include font-text-4;
+        color: $color-gray-1;
+        padding-right: 15%;
+        margin: 5px 0;
+        @include respond(tab-land) {
+          padding-right: 2%;
+        }
+        @include respond(phone) {
+          font-size: 16px;
+          padding-right: 5%;
+        }
+      }
+      &-secondary {
+        margin-right: 3%;
+        @include font-title-2;
+        font-size: 14px;
+        color: $color-gray-1;
+        @include respond(tab-land) {
+          margin-right: 12px;
+        }
+        @include respond(phone) {
+          font-size: 16px;
+        }
+      }
+      &-calification {
+        @include flex-start;
+        &-stars {
+          &-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: $color-yellow-1;
+          }
+        }
+      }
+      &-ingredients {
+        margin: 5px 0 0;
+        @include flex-start;
+        &-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 5px;
+          padding: 5px;
+          margin-bottom: 5px;
+        }
+        @include respond(tab-land) {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+        }
+      }
+      &-price {
+        @include flex-start;
+        &-number {
+          @include font-title-2;
+          color: $color-blue-2;
+          font-size: 18px;
+
+          @include respond(phone) {
+            font-size: 28px;
+          }
+        }
+
+        @include respond(phone) {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          font-size: 20px;
+        }
+      }
+
+      &-btns {
+        margin-top: 2%;
+        @include respond(tab-land) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        @include respond(phone) {
+          flex-direction: column;
+        }
+        &-btn {
+          border-radius: 100px !important;
+          border-color: $color-yellow-1;
+          width: 8rem;
+          padding: 5px;
+          @include font-text-3;
+          color: $color-gray-1;
+          transition: all 0.4s;
+          outline: none;
+          box-shadow: 3px 3px 5px 2px rgba($color-gray-1, 0.2);
+          &:hover {
+            &:hover {
+              background-color: $color-gray-1;
+              color: white;
+              border-color: $color-gray-1;
+            }
+          }
+          @include respond(phone) {
+            width: 98%;
+            padding: 8px;
+            font-size: 16px;
+            color: black;
+            letter-spacing: 1px;
+            margin: 4% 1% 0;
+          }
+        }
+      }
+    }
+  }
+}
+.process {
+  margin-left: 10%;
+  margin-right: 5%;
+  padding-top: 5%;
+
+  @include respond(phone) {
+    margin-left: 5%;
+  }
+  &-box {
+    &-name {
+      height: 40px;
+      background-color: $color-blue-2;
+      border-radius: 10px;
+      @include flex-center;
+      h3 {
+        color: white;
+        @include font-title-2;
+        font-size: 22px;
+      }
+    }
+    &-description {
+      border: 1px solid $color-blue-2;
+
+      margin: 10px;
+      margin-top: 0;
+      padding: 5%;
+
+      &-name {
+        @include flex;
+        p {
+          @include font-text-4;
+          color: $color-gray-1;
+        }
+      }
+      &-text {
+        @include flex;
+        p {
+          @include font-text-1;
+          @include respond(phone) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &-btn {
+    margin-top: 5%;
+    padding: 10px;
+    width: 100%;
+    color: $color-gray-1;
+    transition: all 0.4s;
+    box-shadow: 3px 3px 5px 2px rgba($color-gray-1, 0.2);
+    margin-bottom: 15px;
+    &:hover {
+      background-color: $color-gray-1;
+      color: white;
+    }
+    @include respond(phone) {
+      font-size: 18px;
+    }
+  }
+}
+.blog {
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30rem;
+  @include flex-center;
+  flex-direction: column;
+  background-image: url("https://3.bp.blogspot.com/-otJEC5GINdw/Vvos12wGUpI/AAAAAAAAKzs/4UdFNgC7278MQ_ypmvn7Kowzitc8klUvQ/s1600/Foto1.JPG");
+}
+// pago uno- datos tarjeta
+
+.cards-paid {
+  margin: 0 0 15px 2%;
+  padding: 0 3% 5%;
+  box-shadow: 6px 6px 10px 5px rgba(0, 0, 0, 0.2);
+
+  @include respond(phone) {
+    box-shadow: none;
+  }
+
+  &-box {
+    &-title {
+      @include font-title-1;
+      text-transform: uppercase;
+      font-size: 18px;
+      color: $color-blue-1;
+      text-align: center;
+      padding-bottom: 3%;
+    }
+    &-description {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 0 15px;
+
+      @include respond(tab-land) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      &-text {
+        margin: 5px 0;
+        @include flex-start;
+        h5 {
+          margin-right: 10px;
+          @include font-title-1;
+          font-size: 12px;
+        }
+        p {
+          @include font-text-4;
+        }
+      }
+    }
+  }
+}
+
+// proceso de pago
+.process-paid {
+  padding-top: 0;
+  &-description {
+    width: 100%;
+    p {
+      @include font-text-4;
+      padding-top: 5px;
+    }
+    &-total {
+      @include flex;
+      margin-top: 5%;
+      h3 {
+        @include font-text-2;
+        font-weight: 500;
+      }
+      p {
+        @include font-title-2;
+        font-size: 20px;
+        color: $color-blue-2;
+      }
+    }
+  }
+
+  &-delivery {
+    width: 100%;
+    @include font-text-2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    input {
+      margin-right: 2%;
+      cursor: pointer;
+    }
+
+    @include respond(phone) {
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.process-bar-container {
+  padding-top: 10px;
+}
+
+// pago paso dos- factura
+
+.ticket {
+  padding: 15px;
+  margin: 2% 20% 0;
+  box-shadow: none;
+  border: 1px solid $color-gray-2;
+  @include respond(phone) {
+    margin: 2%;
+  }
+  &-progress {
+    left: 30%;
+
+    @include respond(phone) {
+      left: 10px;
+    }
+  }
+
+  &-box {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-total {
+    justify-content: flex-end;
+    h3 {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

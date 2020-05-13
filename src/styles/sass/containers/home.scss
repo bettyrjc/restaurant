@@ -1,0 +1,332 @@
+.container {
+  min-height: 80vh;
+  background-color: white;
+  margin: 0 10%;
+
+  @include respond(phone) {
+    margin: 0;
+  }
+}
+// slider
+.slider {
+  width: 99%;
+  &-main {
+    height: 30rem;
+    @include flex;
+  }
+  &-container {
+    overflow: hidden;
+    @include flex;
+    height: 95%;
+    width: 100%;
+    img {
+      width: 100vw;
+      height: 100%;
+      vertical-align: top;
+      transition: 2s;
+    }
+
+    @include respond(phone-land) {
+      width: 90%;
+    }
+    @include respond(phone) {
+      width: 80%;
+    }
+  }
+  &-box {
+    @include flex-center;
+    &-circle {
+      height: 1rem;
+      width: 1rem;
+      margin: 5px 5px 0;
+      background-color: $color-gray-2;
+      border-radius: 100%;
+
+      &.active {
+        background-color: $color-blue-2;
+      }
+    }
+  }
+}
+// favoritos
+.image {
+  width: 100%;
+  position: relative;
+}
+.favorites {
+  background-image: url("../img/azyl.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+
+  @include respond(phone-land) {
+    background-image: none;
+  }
+  &-title {
+    @include font-title-2;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+
+    @include respond(phone-land) {
+      color: black;
+    }
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(3, 330px);
+    margin-left: 7%;
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, 230px);
+    }
+    @include respond(phone-land) {
+      display: block;
+      margin-left: 0;
+    }
+  }
+
+  &-box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-right: 5px;
+    height: 350px;
+    @include respond(tab-land) {
+      height: 380px;
+    }
+    @include respond(phone-land) {
+      margin-right: 0px;
+      height: 320px;
+      width: 100%;
+    }
+    &-img {
+      width: 98%;
+      img {
+        margin: 0;
+        width: 100%;
+        height: 15rem;
+      }
+    }
+    &-title {
+      @include font-title-3;
+      color: white;
+      margin: 0;
+      @include respond(phone-land) {
+        color: black;
+      }
+    }
+    &-text {
+      padding: 5px;
+      margin: 0;
+      @include font-text-4;
+      color: white;
+
+      @include respond(phone-land) {
+        padding: 0;
+        @include font-text-3;
+        color: black;
+      }
+      @include respond(phone) {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+.workers {
+  margin-bottom: 20px;
+  &-title {
+    @include font-title-1;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+
+    @include respond(phone-land) {
+      font-size: 26px;
+    }
+  }
+  &-boxMain {
+    @include flex;
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $color-gray-2;
+      transition: all 0.2s linear;
+
+      &:hover {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+  &-container {
+    overflow: hidden;
+    @include flex;
+    padding: 0.5rem 0;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-box {
+    width: 383px;
+    height: 384px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    &-img {
+      img {
+        width: 100%;
+        height: 20rem;
+
+        @include respond(phone-land) {
+          height: 13rem;
+        }
+      }
+    }
+    &-title {
+      color: $color-blue-1;
+      @include font-title-3;
+      margin: 0;
+
+      @include respond(phone-land) {
+        font-size: 16px;
+      }
+    }
+    &-text {
+      padding: 5px;
+      margin: 0;
+      @include font-text-4;
+    }
+  }
+  &-circle {
+    height: 0.5rem;
+    width: 5rem;
+    margin: 5px 5px 0;
+    background-color: $color-gray-2;
+    border-radius: 50px;
+
+    &.active {
+      background-color: $color-blue-2;
+    }
+  }
+}
+.categories {
+  border-top: none;
+  padding-bottom: 1rem;
+
+  &-title {
+    @include font-title-1;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  &-grilla {
+    margin: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    @include respond(tab) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &-img {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-text {
+      opacity: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      transition: all 0.5s linear;
+      h2 {
+        opacity: 1;
+        @include font-title-3;
+        color: white;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.delivery {
+  background-image: url("../img/delivery.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50rem;
+  @include flex-center;
+  flex-direction: column;
+  &-btn {
+    cursor: pointer;
+    padding: 1%;
+    border: 2px solid $color-blue-1;
+    color: $color-blue-1;
+    @include font-text-2;
+    border-radius: 100px;
+    width: 50%;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    transform: scaleX(1);
+
+    &:hover {
+      transform: scaleY(1.1);
+    }
+
+    @include respond(phone) {
+      width: 98%;
+      margin: 0 1%;
+      margin-bottom: 3%;
+    }
+  }
+  &-text {
+    font-weight: 900;
+    color: red;
+    font-family: "Handlee", cursive;
+    font-size: 20px;
+  }
+  &-h3 {
+    @include font-title-1;
+    font-size: 26px;
+
+    @include respond(tab-land) {
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 20px;
+    }
+  }
+}

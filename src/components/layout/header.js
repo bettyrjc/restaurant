@@ -1,35 +1,36 @@
 import React from "react";
-import icons from "../styles/images/icons/sprite.svg";
-// import Search from "./Search";
+import icons from "../../styles/img/sprite.svg";
 const header = (props) => {
   const { clicked, value } = props;
   return (
-    <header className="header">
-      <div className="header-logo">
-        <svg className="header-logo-icon">
-          <use href={`${icons}#icon-align-justify`} />
+    <header class="header">
+      <div class="header-menuicon">
+        <svg class="header-menuicon-icon" id="menu">
+          <use href={`${icons}#icon-menu`}></use>
         </svg>
       </div>
-      <div className="header-search">
+      <div class="header-logo" id="logo">
+        Restauranta
+      </div>
+      <div class="header-search">
         <input
+          id="search-input"
+          class="header-search-input"
           type="text"
-          placeholder="Buscar..."
-          id="search"
+          placeholder="Busca tu comida..."
           value={value}
           onChange={clicked}
         />
-      </div>
-      <div className="header-navegation">
-        <svg className="header-navegation-icon">
-          <use href={`${icons}#icon-heart`} />
-        </svg>
-        <svg className="header-navegation-icon">
-          <use href={`${icons}#icon-mail`} />
-        </svg>
-        <svg className="header-navegation-icon">
-          <use href={`${icons}#icon-shopping-cart`} />
+        <svg class="header-search-icon" id="search-lupa">
+          <use href={`${icons}#icon-search`}></use>
         </svg>
       </div>
+      <ul class="header-navegation">
+        <li>Carrito</li>
+        <li>Favoritos</li>
+        <li>Blog</li>
+        <li class="pad-right-10">Delivery</li>
+      </ul>
     </header>
   );
 };
