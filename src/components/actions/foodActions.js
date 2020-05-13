@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_FOODS, GET_SEARCH_FOOD } from "./types";
+import { GET_FOODS, GET_SEARCH_FOOD, GET_FOOD } from "./types";
 
 export const getFoods = () => async (dispatch) => {
   try {
@@ -29,5 +29,20 @@ export const getFood = (query) => async (dispatch) => {
     console.log(res.data.meals);
   } catch {
     console.log("error en busqueda");
+  }
+};
+export const getOneFood = (id) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`
+    );
+
+    dispatch({
+      type: GET_FOOD,
+      payload: res.data.meals,
+    });
+    console.log(res.data);
+  } catch {
+    console.log("error no entiendo");
   }
 };

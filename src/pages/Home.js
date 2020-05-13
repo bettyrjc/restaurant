@@ -6,7 +6,11 @@ import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Slider from "../components/layout/Slider";
 import Worker from "../components/layout/Workers";
-import { getFoods, getFood } from "../components/actions/foodActions";
+import {
+  getFoods,
+  getOneFood,
+  getFood,
+} from "../components/actions/foodActions";
 import { init } from "../components/utils/utils";
 class Home extends Component {
   state = {
@@ -15,6 +19,8 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.getFoods();
+    this.props.getOneFood();
+
     init();
   }
 
@@ -133,11 +139,15 @@ Home.protoTypes = {
   foods: PropTypes.array.isRequired,
   getFoods: PropTypes.func.isRequired,
   getFood: PropTypes.func.isRequired,
+  getOneFood: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   foods: state.food.foods,
   search: state.food.search,
+  food: state.food.foods,
 });
 
-export default connect(mapStateToProps, { getFoods, getFood })(Home);
+export default connect(mapStateToProps, { getFoods, getOneFood, getFood })(
+  Home
+);

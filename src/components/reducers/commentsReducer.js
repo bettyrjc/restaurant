@@ -1,39 +1,37 @@
 import {
-  GET_FOODS,
-  GET_SEARCH_FOOD,
-  FOOD_END_LOADING,
-  FOOD_LOADING,
+  GET_USERS,
+  GET_USER,
+  USER_LOADING,
+  USER_END_LOADING,
 } from "../actions/types";
 
 const initialState = {
-  foods: [],
-  search: [],
+  user: {},
+  users: [],
 };
-
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FOOD_LOADING:
+    case USER_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case FOOD_END_LOADING:
+    case USER_END_LOADING:
       return {
         ...state,
         loading: false,
       };
-    case GET_FOODS:
+    case GET_USERS:
       return {
         ...state,
         loading: false,
-        foods: action.payload,
+        users: action.payload,
       };
-    case GET_SEARCH_FOOD:
+    case GET_USER:
       return {
         ...state,
         loading: false,
-        search: action.payload,
-        ...state.comments,
+        user: action.payload,
       };
     default:
       return state;

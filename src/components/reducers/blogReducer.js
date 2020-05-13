@@ -1,39 +1,37 @@
 import {
-  GET_FOODS,
-  GET_SEARCH_FOOD,
-  FOOD_END_LOADING,
-  FOOD_LOADING,
+  GET_PHOTO,
+  GET_PHOTOS,
+  PHOTO_LOADING,
+  PHOTO_END_LOADING,
 } from "../actions/types";
 
 const initialState = {
-  foods: [],
-  search: [],
+  blog: {},
+  blogs: [],
 };
-
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FOOD_LOADING:
+    case PHOTO_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case FOOD_END_LOADING:
+    case PHOTO_END_LOADING:
       return {
         ...state,
         loading: false,
       };
-    case GET_FOODS:
+    case GET_PHOTO:
       return {
         ...state,
         loading: false,
-        foods: action.payload,
+        blogs: action.payload,
       };
-    case GET_SEARCH_FOOD:
+    case GET_PHOTOS:
       return {
         ...state,
         loading: false,
-        search: action.payload,
-        ...state.comments,
+        blog: action.payload,
       };
     default:
       return state;
