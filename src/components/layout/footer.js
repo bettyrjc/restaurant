@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import icons from "../../styles/img/sprite.svg";
+import icons from "../styles/img/sprite.svg";
 
 function footer() {
   return (

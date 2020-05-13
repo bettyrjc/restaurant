@@ -1,5 +1,5 @@
 import React from "react";
-import icons from "../../styles/img/sprite.svg";
+import icons from "../styles/img/sprite.svg";
 const header = (props) => {
   const { clicked, value } = props;
   return (
