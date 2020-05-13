@@ -6,7 +6,7 @@ import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Slider from "../components/layout/Slider";
 import Worker from "../components/layout/Workers";
-import { getFoods, getFood } from "../actions/foodActions";
+import { getFoods, getFood } from "../components/actions/foodActions";
 import { init } from "../components/utils/utils";
 class Home extends Component {
   state = {

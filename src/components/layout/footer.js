@@ -5,9 +5,11 @@ import icons from "../../styles/img/sprite.svg";
 function footer() {
   return (
     <footer class="footer">
-      <svg class="footer-icon">
-        <use href={`${icons}#icon-instagram`}></use>
-      </svg>
+      <Link to="instagram.com">
+        <svg class="footer-icon">
+          <use href={`${icons}#icon-instagram`}></use>
+        </svg>
+      </Link>
       <svg class="footer-icon">
         <use href={`${icons}#icon-facebook`}></use>
       </svg>

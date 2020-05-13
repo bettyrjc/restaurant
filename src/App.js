@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Home from "./container/Home";
+import Home from "./pages/Home";
 import "./styles/css/style.css";
 
 class App extends Component {
