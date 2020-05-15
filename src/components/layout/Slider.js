@@ -11,8 +11,9 @@ class Slider extends Component {
     this.showSlide(indice);
   }
   componentWillUnmount() {
-    this.showSlide(indice);
+    this.showSlide();
   }
+
   showSlide(n) {
     let slides = document.getElementsByClassName("slider-img");
     let barras = document.getElementsByClassName("slider-box-circle");
@@ -39,9 +40,11 @@ class Slider extends Component {
   position(n) {
     this.showSlide((indice = n));
   }
-  counter = setInterval(() => {
-    this.showSlide((indice += 1));
-  }, 2000);
+  counter() {
+    setInterval(() => {
+      this.showSlide((indice += 1));
+    }, 2000);
+  }
 
   render() {
     return (

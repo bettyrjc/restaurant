@@ -25,13 +25,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
-        blogs: action.payload,
+        blog: action.payload,
       };
     case GET_PHOTOS:
       return {
         ...state,
         loading: false,
-        blog: action.payload,
+        blogs: action.payload,
       };
     default:
       return state;

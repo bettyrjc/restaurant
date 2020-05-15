@@ -4,12 +4,13 @@ import { GET_USER, GET_USERS, USER_END_LOADING, USER_LOADING } from "./types";
 export const getUsers = () => async (dispatch) => {
   UserLoading(dispatch);
   try {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/USERs");
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
 
     dispatch({
       type: GET_USERS,
       payload: res.data,
     });
+    console.log(res.data);
   } catch (err) {
     console.log(err);
     removeUserLoading(dispatch);

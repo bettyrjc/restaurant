@@ -9,6 +9,9 @@ import Home from "./pages/Home";
 import Foods from "./pages/foods";
 
 import Food from "./components/commons/foods/food";
+
+import Blog from "./pages/blog";
+import BlogGrilla from "./pages/blog-grill";
 import "./components/styles/css/style.css";
 
 class App extends Component {
@@ -20,6 +23,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/comidas" component={Foods} />
             <Route exact path="/comidas/:id" component={Food} />
+            <Route exact path="/blog" component={Blog} />
+            <Route exact path="/blogGrilla" component={BlogGrilla} />
           </Switch>
         </BrowserRouter>
       </Provider>

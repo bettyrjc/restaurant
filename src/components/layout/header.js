@@ -35,7 +35,10 @@ const header = (props) => {
         </li>
         <li>Carrito</li>
         <li>Favoritos</li>
-        <li>Blog</li>
+        <li>
+          {" "}
+          <Link to="/blog">Blog</Link>
+        </li>
         <li className="pad-right-10">Delivery</li>
       </ul>
     </header>

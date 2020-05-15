@@ -1,8 +1,8 @@
 import {
-  GET_USERS,
-  GET_USER,
-  USER_LOADING,
-  USER_END_LOADING,
+  GET_COMMENTS,
+  GET_COMMENT,
+  COMMENT_LOADING,
+  COMMENT_END_LOADING,
 } from "../actions/types";
 
 const initialState = {
@@ -11,23 +11,23 @@ const initialState = {
 };
 export default function (state = initialState, action) {
   switch (action.type) {
-    case USER_LOADING:
+    case COMMENT_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case USER_END_LOADING:
+    case COMMENT_END_LOADING:
       return {
         ...state,
         loading: false,
       };
-    case GET_USERS:
+    case GET_COMMENTS:
       return {
         ...state,
         loading: false,
         comments: action.payload,
       };
-    case GET_USER:
+    case GET_COMMENT:
       return {
         ...state,
         loading: false,

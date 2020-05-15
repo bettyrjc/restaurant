@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Header from "../../layout/header";
 import Footer from "../../layout/footer";
 import FoodCard from "../card/foodCard";
+import Comments from "../comments/comments";
 import { getFood } from "../../actions/foodActions";
 class Food extends Component {
   componentDidMount() {
@@ -69,69 +70,7 @@ class Food extends Component {
               </div>
             </div>
           </div>
-          <div className="comments">
-            <h3 className="comments-title">Comentarios</h3>
-            <div className="comment">
-              <div className="comment-imgs">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7FFrxhGko3hUyRhuXBo8cpFfx_cdN5z6syFiBHJBJNUyl2SFf&usqp=CAU"
-                  alt="usuario"
-                  className="comment-img"
-                />
-              </div>
-              <div className="comment-description">
-                <div className="comment-description-box">
-                  <h3>Nombre del usuario</h3>
-                  <p>Publicado hace un mes</p>
-                </div>
-                <p className="comment-description-text">
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer too
-                </p>
-              </div>
-            </div>
-            <div className="comment">
-              <div className="comment-imgs">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7FFrxhGko3hUyRhuXBo8cpFfx_cdN5z6syFiBHJBJNUyl2SFf&usqp=CAU"
-                  alt="usuario"
-                  className="comment-img"
-                />
-              </div>
-              <div className="comment-description">
-                <div className="comment-description-box">
-                  <h3>Nombre del usuario</h3>
-                  <p>Publicado hace un mes</p>
-                </div>
-                <p className="comment-description-text">
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer too
-                </p>
-              </div>
-            </div>
-            <div className="comment">
-              <div className="comment-imgs">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7FFrxhGko3hUyRhuXBo8cpFfx_cdN5z6syFiBHJBJNUyl2SFf&usqp=CAU"
-                  alt="usuario"
-                  className="comment-img"
-                />
-              </div>
-              <div className="comment-description">
-                <div className="comment-description-box">
-                  <h3>Nombre del usuario</h3>
-                  <p>Publicado hace un mes</p>
-                </div>
-                <p className="comment-description-text">
-                  is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer too
-                </p>
-              </div>
-            </div>
-          </div>
+          <Comments />
         </main>
         <Footer />
       </React.Fragment>
