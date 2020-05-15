@@ -6,8 +6,8 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  user: {},
-  users: [],
+  comment: {},
+  comments: [],
 };
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -25,13 +25,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
-        users: action.payload,
+        comments: action.payload,
       };
     case GET_USER:
       return {
         ...state,
         loading: false,
-        user: action.payload,
+        comment: action.payload,
       };
     default:
       return state;

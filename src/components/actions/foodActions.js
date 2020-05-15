@@ -17,7 +17,7 @@ export const getFoods = () => async (dispatch) => {
   }
 };
 
-export const getFood = (query) => async (dispatch) => {
+export const searchFood = (query) => async (dispatch) => {
   try {
     const res = await axios.get(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
@@ -26,22 +26,22 @@ export const getFood = (query) => async (dispatch) => {
       type: GET_SEARCH_FOOD,
       payload: res.data.meals,
     });
-    console.log(res.data.meals);
+    console.log("hola", res.data.meals);
   } catch {
     console.log("error en busqueda");
   }
 };
-export const getOneFood = (id) => async (dispatch) => {
+export const getFood = (id) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
     );
 
     dispatch({
       type: GET_FOOD,
-      payload: res.data.meals,
+      payload: res.data.meals[0],
     });
-    console.log(res.data);
+    console.log("food", res.data.meals[0]);
   } catch {
     console.log("error no entiendo");
   }

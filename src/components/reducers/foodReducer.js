@@ -1,4 +1,5 @@
 import {
+  GET_FOOD,
   GET_FOODS,
   GET_SEARCH_FOOD,
   FOOD_END_LOADING,
@@ -8,6 +9,7 @@ import {
 const initialState = {
   foods: [],
   search: [],
+  food: {},
 };
 
 export default function (state = initialState, action) {
@@ -27,6 +29,12 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         foods: action.payload,
+      };
+    case GET_FOOD:
+      return {
+        ...state,
+        loading: false,
+        food: action.payload,
       };
     case GET_SEARCH_FOOD:
       return {

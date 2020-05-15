@@ -4,13 +4,15 @@ import restaurant from "../styles/img/one.jpeg";
 import comida from "../styles/img/two.jpg";
 import pasta from "../styles/img/three.jpeg";
 import icons from "../styles/img/sprite.svg";
-import { showSlide } from "../utils/utils";
+
 let indice = 1;
 class Slider extends Component {
   componentDidMount() {
     this.showSlide(indice);
   }
-
+  componentWillUnmount() {
+    this.showSlide(indice);
+  }
   showSlide(n) {
     let slides = document.getElementsByClassName("slider-img");
     let barras = document.getElementsByClassName("slider-box-circle");

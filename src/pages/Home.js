@@ -6,53 +6,24 @@ import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Slider from "../components/layout/Slider";
 import Worker from "../components/layout/Workers";
-import {
-  getFoods,
-  getOneFood,
-  getFood,
-} from "../components/actions/foodActions";
+import { getFoods } from "../components/actions/foodActions";
 import { init } from "../components/utils/utils";
 class Home extends Component {
-  state = {
-    value: "",
-  };
-
   componentDidMount() {
     this.props.getFoods();
-    this.props.getOneFood();
-
     init();
   }
 
-  getFoodInput = ({ target: { value } }) => {
-    this.setState(() => value);
-    if (value !== null) {
-      this.props.getFood(value);
-    }
-  };
+  componentWillUnmount() {
+    init();
+  }
 
   render() {
-    const { foods, search } = this.props;
+    const { foods } = this.props;
     return (
       <React.Fragment>
-        <Header clicked={this.getFoodInput} />
+        <Header />
         <div className="container">
-          <div className="categories-grilla">
-            {search === null || search === undefined ? (
-              <div>Busca algo</div>
-            ) : (
-              search.map((fod) => (
-                <div className="categories-box" key={fod.idMeal}>
-                  <div className="categories-box-img">
-                    <img src={fod.strMealThumb} alt={fod.strMeal} />
-                  </div>
-                  <div className="categories-box-text">
-                    <h2>{fod.strMeal}</h2>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
           <Slider />
           <div>
             <div className="favorites">
@@ -135,19 +106,13 @@ class Home extends Component {
   }
 }
 Home.protoTypes = {
-  search: PropTypes.array,
   foods: PropTypes.array.isRequired,
   getFoods: PropTypes.func.isRequired,
-  getFood: PropTypes.func.isRequired,
-  getOneFood: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   foods: state.food.foods,
-  search: state.food.search,
   food: state.food.foods,
 });
 
-export default connect(mapStateToProps, { getFoods, getOneFood, getFood })(
-  Home
-);
+export default connect(mapStateToProps, { getFoods })(Home);
