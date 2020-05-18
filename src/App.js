@@ -6,17 +6,17 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Home from "./pages/Home";
-import Foods from "./pages/foods";
+import Foods from "./pages/Foods";
 
-import Food from "./components/commons/foods/food";
+import Food from "./components/commons/foods/Food";
 
-import Blog from "./pages/blog";
-import BlogGrilla from "./pages/blog-grill";
+import Blog from "./pages/Blog";
+import BlogGrilla from "./pages/Blog-grill";
 import PasoUno from "./components/commons/paids/paidOne";
 import PasoDos from "./components/commons/paids/paidTwo";
-import Cart from "./pages/paid";
+import Cart from "./pages/Paid";
 import "./components/styles/css/style.css";
-import Wishlist from "./pages/wishlist";
+import Wishlist from "./pages/Wishlist";
 
 class App extends Component {
   render() {

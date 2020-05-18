@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 //
 import Header from "../../layout/header";
 import Footer from "../../layout/footer";
-import FoodCard from "../card/foodCard";
+import FoodCard from "../card/FoodCard";
 import Favorites from "../card/favorites";
 import Comments from "../comments/comments";
 import { getFood } from "../../../actions/foodActions";
