@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/layout/footer";
 import Header from "../components/layout/header";
 import icons from "../components/styles/img/sprite.svg";
-import { getBlogs } from "../components/actions/blogActions";
+import { getBlogs } from "../actions/blogActions";
 class Blog extends Component {
   componentDidMount() {
     this.props.getBlogs();

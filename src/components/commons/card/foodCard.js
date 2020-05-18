@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import icons from "../../styles/img/sprite.svg";
+import Calification from "../calification";
 
 class FoodCard extends Component {
   render() {
@@ -28,26 +28,7 @@ class FoodCard extends Component {
               scrambled it to make a type specimen book. It has survived not
               only five centuries, but also the leaps
             </p>
-            <div className="card-box-calification">
-              <h3 className="card-box-secondary">Clasificacion</h3>
-              <div className="card-box-calification-stars">
-                <svg className="card-box-calification-stars-icon">
-                  <use href={`${icons}#icon-star`}></use>
-                </svg>
-                <svg className="card-box-calification-stars-icon">
-                  <use href={`${icons}#icon-star`}></use>
-                </svg>
-                <svg className="card-box-calification-stars-icon">
-                  <use href={`${icons}#icon-star`}></use>
-                </svg>
-                <svg className="card-box-calification-stars-icon">
-                  <use href={`${icons}#icon-star`}></use>
-                </svg>
-                <svg className="card-box-calification-stars-icon">
-                  <use href={`${icons}#icon-star`}></use>
-                </svg>
-              </div>
-            </div>
+            <Calification />
             <div className="card-box-ingredients">
               <h3 className="card-box-secondary">Ingredientes</h3>
               <button className="card-box-ingredients-btn outline">

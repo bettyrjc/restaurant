@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/layout/footer";
 import Header from "../components/layout/header";
 
-import { searchFood } from "../components/actions/foodActions";
+import { searchFood } from "../actions/foodActions";
 
 class Foods extends Component {
   state = {

@@ -33,13 +33,14 @@ const header = (props) => {
         <li>
           <Link to="/comidas">Carta</Link>
         </li>
-        <li>Carrito</li>
+        <li>
+          <Link to="/carrito">Carrito</Link>
+        </li>
         <li>Favoritos</li>
         <li>
           {" "}
           <Link to="/blog">Blog</Link>
         </li>
-        <li className="pad-right-10">Delivery</li>
       </ul>
     </header>
   );

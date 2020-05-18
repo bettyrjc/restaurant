@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { getComments } from "../../actions/commentsActions";
+import { getComments } from "../../../actions/commentsActions";
 class Comments extends Component {
   state = {
     src: ["https://m.eldiario.es/fotos/Foto-Pixabay_EDIIMA20190930_0672_4.jpg"],
